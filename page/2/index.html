@@ -119,7 +119,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: true,
@@ -215,16 +215,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
           </a>
         </li>
       
@@ -341,7 +331,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.fly-lqhwjn.com/2017/08/10/SharedPreferences详解/">
+    <link itemprop="mainEntityOfPage" href="http://www.fly-lqhwjn.com/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LanQinHui">
@@ -360,7 +350,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/10/SharedPreferences详解/" itemprop="url">SharedPreferences详解</a></h1>
+                <a class="post-title-link" href="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" itemprop="url">android imageButton 点击按钮前中后，按钮颜色的变化</a></h1>
         
 
         <div class="post-meta">
@@ -392,8 +382,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2017/08/10/SharedPreferences详解/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://www.fly-lqhwjn.com/2017/08/10/SharedPreferences详解/" class="cy_cmt_count" data-xid="2017/08/10/SharedPreferences详解/" itemprop="commentsCount" ></span>
+                <a href="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://www.fly-lqhwjn.com/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" class="cy_cmt_count" data-xid="2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" itemprop="commentsCount" ></span>
                 </a>
               
             
@@ -401,7 +391,7 @@
 
           
           
-             <span id="/2017/08/10/SharedPreferences详解/" class="leancloud_visitors" data-flag-title="SharedPreferences详解">
+             <span id="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" class="leancloud_visitors" data-flag-title="android imageButton 点击按钮前中后，按钮颜色的变化">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -428,7 +418,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  316
+                  325
                 </span>
               
 
@@ -466,10 +456,10 @@
 
       
         
-          <h2 id="1-获取SharedPreferences的两种方式"><a href="#1-获取SharedPreferences的两种方式" class="headerlink" title="1.获取SharedPreferences的两种方式:"></a>1.获取SharedPreferences的两种方式:</h2><h3 id="1-调用Context对象的getSharedPreferences-方法"><a href="#1-调用Context对象的getSharedPreferences-方法" class="headerlink" title="1 调用Context对象的getSharedPreferences()方法"></a>1 调用Context对象的getSharedPreferences()方法</h3><h3 id="2-调用Activity对象的getPreferences-方法"><a href="#2-调用Activity对象的getPreferences-方法" class="headerlink" title="2 调用Activity对象的getPreferences()方法"></a>2 调用Activity对象的getPreferences()方法</h3><h3 id="两种方式的区别"><a href="#两种方式的区别" class="headerlink" title="两种方式的区别:"></a>两种方式的区别:</h3>
+          <h2 id="1-EditText输入限制规则"><a href="#1-EditText输入限制规则" class="headerlink" title="1.EditText输入限制规则"></a>1.EditText输入限制规则</h2><h3 id="我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res-drawable目录中建立这样一个XML文件："><a href="#我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res-drawable目录中建立这样一个XML文件：" class="headerlink" title="我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res/drawable目录中建立这样一个XML文件："></a>我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res/drawable目录中建立这样一个XML文件：</h3>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/10/SharedPreferences详解/#more" rel="contents">
+            <a class="btn" href="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1366,6 +1356,24 @@
         
 
         
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              工具箱
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://unity3d.com/cn/" title="Unity" target="_blank">Unity</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.android-studio.org/" title="Android(中文社区官网)" target="_blank">Android(中文社区官网)</a>
+                </li>
+              
+            </ul>
+          </div>
         
 
         
