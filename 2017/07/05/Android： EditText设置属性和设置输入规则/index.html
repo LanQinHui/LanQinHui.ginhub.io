@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/23704127?s=400&u=c75c4246802d5a205aabbeff5480f472b834aa3f&v=4?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1.EditText输入限制规则12345$ 在xml:EditText 设置属性android:digits=&quot;ABCDE123&amp;amp;*&quot;ABCDE123&amp;amp;*是你的限制规则例如：android:digits=&quot;0123456789abc&quot;规则是只能输入英文字母（小写）abc和数字">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android中EditText设置属性和设置输入规则">
+<meta property="og:url" content="http://www.fly-lqhwjn.com/2017/07/05/Android： EditText设置属性和设置输入规则/index.html">
+<meta property="og:site_name" content="LanQinHui">
+<meta property="og:description" content="1.EditText输入限制规则12345$ 在xml:EditText 设置属性android:digits=&quot;ABCDE123&amp;amp;*&quot;ABCDE123&amp;amp;*是你的限制规则例如：android:digits=&quot;0123456789abc&quot;规则是只能输入英文字母（小写）abc和数字">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-07-06T02:26:39.531Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android中EditText设置属性和设置输入规则">
+<meta name="twitter:description" content="1.EditText输入限制规则12345$ 在xml:EditText 设置属性android:digits=&quot;ABCDE123&amp;amp;*&quot;ABCDE123&amp;amp;*是你的限制规则例如：android:digits=&quot;0123456789abc&quot;规则是只能输入英文字母（小写）abc和数字">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.fly-lqhwjn.com/2017/07/05/Android： EditText设置属性和设置输入规则/"/>
+
+
+
+
+
+  <title>Android中EditText设置属性和设置输入规则 | LanQinHui</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+<a href="https://github.com/LanQinHui"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LanQinHui</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">且行且珍惜</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/photos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            照片
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-download">
+          <a href="/download" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cloud-download"></i> <br />
+            
+            下载
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/commonweal/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.fly-lqhwjn.com/2017/07/05/Android： EditText设置属性和设置输入规则/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LanQinHui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/23704127?s=400&u=c75c4246802d5a205aabbeff5480f472b834aa3f&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LanQinHui">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android中EditText设置属性和设置输入规则</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T22:28:40+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/07/05/Android： EditText设置属性和设置输入规则/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/07/05/Android： EditText设置属性和设置输入规则/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2017/07/05/Android： EditText设置属性和设置输入规则/" class="leancloud_visitors" data-flag-title="Android中EditText设置属性和设置输入规则">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count">
+                 </span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  964
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-EditText输入限制规则"><a href="#1-EditText输入限制规则" class="headerlink" title="1.EditText输入限制规则"></a>1.EditText输入限制规则</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ 在xml:EditText 设置属性</span><br><span class="line">android:digits=<span class="string">"ABCDE123&amp;*"</span></span><br><span class="line">ABCDE123&amp;*是你的限制规则</span><br><span class="line">例如：android:digits=<span class="string">"0123456789abc"</span></span><br><span class="line">规则是只能输入英文字母（小写）abc和数字</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="2-EditTex输入的文字为密码形式"><a href="#2-EditTex输入的文字为密码形式" class="headerlink" title="2.EditTex输入的文字为密码形式"></a>2.EditTex输入的文字为密码形式</h2><h3 id="1-、在xml中设置"><a href="#1-、在xml中设置" class="headerlink" title="(1)、在xml中设置"></a>(1)、在xml中设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:password=<span class="string">"true"</span> //以<span class="string">"."</span>形式显示文本</span><br></pre></td></tr></table></figure>
+<h3 id="2-、在代码里设置"><a href="#2-、在代码里设置" class="headerlink" title="(2)、在代码里设置"></a>(2)、在代码里设置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通过设置EditTex的setTransformationMethod()方法来实现隐藏密码和显示密码</span><br><span class="line">editText.setTransformationMethod(PasswordTransformationMethod.getInstance());</span><br><span class="line">//设置密码不可见</span><br></pre></td></tr></table></figure>
+<h2 id="3-EditTex输入的文字为电话号码"><a href="#3-EditTex输入的文字为电话号码" class="headerlink" title="3.EditTex输入的文字为电话号码"></a>3.EditTex输入的文字为电话号码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:phoneNumber=<span class="string">"true"</span>//输入电话号码</span><br></pre></td></tr></table></figure>
+<h2 id="4-EditTex字数限制"><a href="#4-EditTex字数限制" class="headerlink" title="4.EditTex字数限制"></a>4.EditTex字数限制</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### （1）在xml中设置</span></span><br><span class="line">android:maxLength=<span class="string">"50"</span></span><br><span class="line"><span class="comment">### (2)在代码中设置</span></span><br><span class="line">editText.setFilters(new InputFilter[]&#123;newInputFilter.LengthFilter(100)&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="6-在EditText中软键盘的调起、关闭"><a href="#6-在EditText中软键盘的调起、关闭" class="headerlink" title="6.在EditText中软键盘的调起、关闭"></a>6.在EditText中软键盘的调起、关闭</h2><h3 id="（1）EditTex有焦点（focusable为true）阻止输入法弹出"><a href="#（1）EditTex有焦点（focusable为true）阻止输入法弹出" class="headerlink" title="（1）EditTex有焦点（focusable为true）阻止输入法弹出"></a>（1）EditTex有焦点（focusable为true）阻止输入法弹出</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">editText.setOnTouchListener(new <span class="function"><span class="title">OnTouchListener</span></span>()&#123;</span><br><span class="line">public boolean onTouch(View view,MotionEvent event)&#123;</span><br><span class="line">editText.setInputType(Input.TYPE_NULL);//关闭软键盘</span><br><span class="line"><span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="2-EditText无焦点（focusable-false"><a href="#2-EditText无焦点（focusable-false" class="headerlink" title="(2)EditText无焦点（focusable=false)"></a>(2)EditText无焦点（focusable=false)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">InputMethodManager imm=(InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);</span><br><span class="line">imm.hideSoftInputFromWindow(editText.getWindowToken(),0);</span><br></pre></td></tr></table></figure>
+<h3 id="3-调用数字键盘并设置输入类型和键盘为英文"><a href="#3-调用数字键盘并设置输入类型和键盘为英文" class="headerlink" title="(3)调用数字键盘并设置输入类型和键盘为英文"></a>(3)调用数字键盘并设置输入类型和键盘为英文</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">editText.setInputType(InputType.TYPE_CLASS_NUMBER);//调用数字键盘</span><br><span class="line">editText.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);//英文</span><br></pre></td></tr></table></figure>
+<h3 id="（4）键盘永远不会弹出"><a href="#（4）键盘永远不会弹出" class="headerlink" title="（4）键盘永远不会弹出"></a>（4）键盘永远不会弹出</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android:focusable=<span class="string">"false"</span>// 键盘永不弹出</span><br></pre></td></tr></table></figure>
+<h3 id="7-软键盘的调起导致原来的界面被挤上去，或者导致界面下面的tab导航被挤上去，解决方法如下"><a href="#7-软键盘的调起导致原来的界面被挤上去，或者导致界面下面的tab导航被挤上去，解决方法如下" class="headerlink" title="7.软键盘的调起导致原来的界面被挤上去，或者导致界面下面的tab导航被挤上去，解决方法如下"></a>7.软键盘的调起导致原来的界面被挤上去，或者导致界面下面的tab导航被挤上去，解决方法如下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用Mainfest中的Activity的android:windowSfotInputMdoe的“adjustPan<span class="string">"属性</span></span><br><span class="line"><span class="string">另外注意：有关软键盘的问题可参考android:windowSoftInputMode中的属性，下面可防止toolbar与EditText共用出现的toolBar拉伸现象。</span></span><br><span class="line"><span class="string">android:windowSoftInputMode="</span>stateVisible|adjustPan|stateHidden<span class="string">"</span></span><br></pre></td></tr></table></figure>
+<h2 id="8-光标详解"><a href="#8-光标详解" class="headerlink" title="8.光标详解"></a>8.光标详解</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">editText.requestFocusFromTouch();//让光标放入到点击位置</span><br><span class="line">editText.requestFocus();//默认方式获得焦点</span><br><span class="line">editText editor=(EditText)getCurrentView();//光标插入</span><br><span class="line">int cursor=editor.getSelectionStart();//光标插入</span><br><span class="line">editor.getText().inset(cursor,delta);</span><br></pre></td></tr></table></figure>
+<h2 id="Android-EditText-属性汇总"><a href="#Android-EditText-属性汇总" class="headerlink" title="Android EditText 属性汇总"></a>Android EditText 属性汇总</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">android:layout_gravity=<span class="string">"center_vertical"</span> 设置控件显示的位置：默认top，这里居中显示，还有bottom android:hint=<span class="string">"请输入数字！"</span></span><br><span class="line">设置显示在空间上的提示信息 android:numeric=<span class="string">"integer"</span> 设置只能输入整数，如果是小数则是：decimal android:singleLine=<span class="string">"true"</span> 设置单行输入，一旦设置为<span class="literal">true</span>，则文字不会自动换行。</span><br><span class="line">android:password=<span class="string">"true"</span> 设置只能输入密码</span><br><span class="line">android:textColor = <span class="string">"#ff8c00"</span> 字体颜色</span><br><span class="line">android:textStyle=<span class="string">"bold"</span> 字体，bold, italic, bolditalic android:textSize=<span class="string">"20dip"</span> 大小</span><br><span class="line">android:capitalize = <span class="string">"characters"</span> 以大写字母写</span><br><span class="line">android:textAlign=<span class="string">"center"</span> EditText没有这个属性，但TextView有 android:textColorHighlight=<span class="string">"#cccccc"</span> 被选中文字的底色，默认为蓝色</span><br><span class="line">android:textColorHint=<span class="string">"#ffff00"</span> 设置提示信息文字的颜色，默认为灰色 android:textScaleX=<span class="string">"1.5"</span> 控制字与字之间的间距</span><br><span class="line">android:typeface=<span class="string">"monospace"</span> 字型，normal, sans, serif, monospace android:background=<span class="string">"@null"</span> 空间背景，这里没有，指透明</span><br><span class="line">android:layout_weight=<span class="string">"1"</span> 权重，控制控件之间的地位,在控制控件显示的大小时蛮有用的。</span><br><span class="line">android:textAppearance=<span class="string">"?android:attr/textAppearanceLargeInverse"</span> 文字外观，这里引用的是系统自带的一个外观，？表示系统是否有这种外观，否则使用默认的外观。不知道这样理解对不对？ 通过EditText的layout xml文件中的相关属性来实现:</span><br><span class="line">``` </span><br><span class="line"><span class="comment">### 1. 密码框属性 android:password="true"</span></span><br><span class="line">这条可以让EditText显示的内容自动为星号，输入时内容会在1秒内变成*字样。</span><br><span class="line"><span class="comment">### 2. 纯数字 android:numeric="true"</span></span><br><span class="line">这条可以让输入法自动变为数字输入键盘，同时仅允许0-9的数字输入</span><br><span class="line"><span class="comment">### 3. 仅允许 android:capitalize="cwj1987"</span></span><br><span class="line">```bash</span><br><span class="line">这样仅允许接受输入cwj1987，一般用于密码验证 下面是一些扩展的风格属性</span><br><span class="line">android:editable=<span class="string">"false"</span> 设置EditText不可编辑</span><br><span class="line">android:singleLine=<span class="string">"true"</span> 强制输入的内容在单行</span><br><span class="line">android:ellipsize=<span class="string">"end"</span> 自动隐藏尾部溢出数据，一般用于文字内容过长一行无法全部显示时</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/03/考试/" rel="next" title="考试">
+                <i class="fa fa-chevron-left"></i> 考试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/06/hexo的一些配置/" rel="prev" title="Hexo的一些配置">
+                Hexo的一些配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/23704127?s=400&u=c75c4246802d5a205aabbeff5480f472b834aa3f&v=4"
+               alt="LanQinHui" />
+          <p class="site-author-name" itemprop="name">LanQinHui</p>
+           
+              <p class="site-description motion-element" itemprop="description">学如逆水行舟，不进则退</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LanQinHui" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/ac149ed0d520/timeline" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-inbox"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/593fbb5bac502e006b5b8e7e" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-legal"></i>
+                  
+                    
+                      掘金
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-EditText输入限制规则"><span class="nav-number">1.</span> <span class="nav-text"><a href="#1-EditText&#x8F93;&#x5165;&#x9650;&#x5236;&#x89C4;&#x5219;" class="headerlink" title="1.EditText&#x8F93;&#x5165;&#x9650;&#x5236;&#x89C4;&#x5219;"></a>1.EditText&#x8F93;&#x5165;&#x9650;&#x5236;&#x89C4;&#x5219;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-EditTex输入的文字为密码形式"><span class="nav-number">2.</span> <span class="nav-text"><a href="#2-EditTex&#x8F93;&#x5165;&#x7684;&#x6587;&#x5B57;&#x4E3A;&#x5BC6;&#x7801;&#x5F62;&#x5F0F;" class="headerlink" title="2.EditTex&#x8F93;&#x5165;&#x7684;&#x6587;&#x5B57;&#x4E3A;&#x5BC6;&#x7801;&#x5F62;&#x5F0F;"></a>2.EditTex&#x8F93;&#x5165;&#x7684;&#x6587;&#x5B57;&#x4E3A;&#x5BC6;&#x7801;&#x5F62;&#x5F0F;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-、在xml中设置"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#1-&#x3001;&#x5728;xml&#x4E2D;&#x8BBE;&#x7F6E;" class="headerlink" title="(1)&#x3001;&#x5728;xml&#x4E2D;&#x8BBE;&#x7F6E;"></a>(1)&#x3001;&#x5728;xml&#x4E2D;&#x8BBE;&#x7F6E;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-、在代码里设置"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#2-&#x3001;&#x5728;&#x4EE3;&#x7801;&#x91CC;&#x8BBE;&#x7F6E;" class="headerlink" title="(2)&#x3001;&#x5728;&#x4EE3;&#x7801;&#x91CC;&#x8BBE;&#x7F6E;"></a>(2)&#x3001;&#x5728;&#x4EE3;&#x7801;&#x91CC;&#x8BBE;&#x7F6E;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-EditTex输入的文字为电话号码"><span class="nav-number">3.</span> <span class="nav-text"><a href="#3-EditTex&#x8F93;&#x5165;&#x7684;&#x6587;&#x5B57;&#x4E3A;&#x7535;&#x8BDD;&#x53F7;&#x7801;" class="headerlink" title="3.EditTex&#x8F93;&#x5165;&#x7684;&#x6587;&#x5B57;&#x4E3A;&#x7535;&#x8BDD;&#x53F7;&#x7801;"></a>3.EditTex&#x8F93;&#x5165;&#x7684;&#x6587;&#x5B57;&#x4E3A;&#x7535;&#x8BDD;&#x53F7;&#x7801;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-EditTex字数限制"><span class="nav-number">4.</span> <span class="nav-text"><a href="#4-EditTex&#x5B57;&#x6570;&#x9650;&#x5236;" class="headerlink" title="4.EditTex&#x5B57;&#x6570;&#x9650;&#x5236;"></a>4.EditTex&#x5B57;&#x6570;&#x9650;&#x5236;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-在EditText中软键盘的调起、关闭"><span class="nav-number">5.</span> <span class="nav-text"><a href="#6-&#x5728;EditText&#x4E2D;&#x8F6F;&#x952E;&#x76D8;&#x7684;&#x8C03;&#x8D77;&#x3001;&#x5173;&#x95ED;" class="headerlink" title="6.&#x5728;EditText&#x4E2D;&#x8F6F;&#x952E;&#x76D8;&#x7684;&#x8C03;&#x8D77;&#x3001;&#x5173;&#x95ED;"></a>6.&#x5728;EditText&#x4E2D;&#x8F6F;&#x952E;&#x76D8;&#x7684;&#x8C03;&#x8D77;&#x3001;&#x5173;&#x95ED;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）EditTex有焦点（focusable为true）阻止输入法弹出"><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#&#xFF08;1&#xFF09;EditTex&#x6709;&#x7126;&#x70B9;&#xFF08;focusable&#x4E3A;true&#xFF09;&#x963B;&#x6B62;&#x8F93;&#x5165;&#x6CD5;&#x5F39;&#x51FA;" class="headerlink" title="&#xFF08;1&#xFF09;EditTex&#x6709;&#x7126;&#x70B9;&#xFF08;focusable&#x4E3A;true&#xFF09;&#x963B;&#x6B62;&#x8F93;&#x5165;&#x6CD5;&#x5F39;&#x51FA;"></a>&#xFF08;1&#xFF09;EditTex&#x6709;&#x7126;&#x70B9;&#xFF08;focusable&#x4E3A;true&#xFF09;&#x963B;&#x6B62;&#x8F93;&#x5165;&#x6CD5;&#x5F39;&#x51FA;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-EditText无焦点（focusable-false"><span class="nav-number">5.2.</span> <span class="nav-text"><a href="#2-EditText&#x65E0;&#x7126;&#x70B9;&#xFF08;focusable-false" class="headerlink" title="(2)EditText&#x65E0;&#x7126;&#x70B9;&#xFF08;focusable=false)"></a>(2)EditText&#x65E0;&#x7126;&#x70B9;&#xFF08;focusable=false)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-调用数字键盘并设置输入类型和键盘为英文"><span class="nav-number">5.3.</span> <span class="nav-text"><a href="#3-&#x8C03;&#x7528;&#x6570;&#x5B57;&#x952E;&#x76D8;&#x5E76;&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#x548C;&#x952E;&#x76D8;&#x4E3A;&#x82F1;&#x6587;" class="headerlink" title="(3)&#x8C03;&#x7528;&#x6570;&#x5B57;&#x952E;&#x76D8;&#x5E76;&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#x548C;&#x952E;&#x76D8;&#x4E3A;&#x82F1;&#x6587;"></a>(3)&#x8C03;&#x7528;&#x6570;&#x5B57;&#x952E;&#x76D8;&#x5E76;&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x7C7B;&#x578B;&#x548C;&#x952E;&#x76D8;&#x4E3A;&#x82F1;&#x6587;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（4）键盘永远不会弹出"><span class="nav-number">5.4.</span> <span class="nav-text"><a href="#&#xFF08;4&#xFF09;&#x952E;&#x76D8;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x5F39;&#x51FA;" class="headerlink" title="&#xFF08;4&#xFF09;&#x952E;&#x76D8;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x5F39;&#x51FA;"></a>&#xFF08;4&#xFF09;&#x952E;&#x76D8;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x5F39;&#x51FA;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-软键盘的调起导致原来的界面被挤上去，或者导致界面下面的tab导航被挤上去，解决方法如下"><span class="nav-number">5.5.</span> <span class="nav-text"><a href="#7-&#x8F6F;&#x952E;&#x76D8;&#x7684;&#x8C03;&#x8D77;&#x5BFC;&#x81F4;&#x539F;&#x6765;&#x7684;&#x754C;&#x9762;&#x88AB;&#x6324;&#x4E0A;&#x53BB;&#xFF0C;&#x6216;&#x8005;&#x5BFC;&#x81F4;&#x754C;&#x9762;&#x4E0B;&#x9762;&#x7684;tab&#x5BFC;&#x822A;&#x88AB;&#x6324;&#x4E0A;&#x53BB;&#xFF0C;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;" class="headerlink" title="7.&#x8F6F;&#x952E;&#x76D8;&#x7684;&#x8C03;&#x8D77;&#x5BFC;&#x81F4;&#x539F;&#x6765;&#x7684;&#x754C;&#x9762;&#x88AB;&#x6324;&#x4E0A;&#x53BB;&#xFF0C;&#x6216;&#x8005;&#x5BFC;&#x81F4;&#x754C;&#x9762;&#x4E0B;&#x9762;&#x7684;tab&#x5BFC;&#x822A;&#x88AB;&#x6324;&#x4E0A;&#x53BB;&#xFF0C;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;"></a>7.&#x8F6F;&#x952E;&#x76D8;&#x7684;&#x8C03;&#x8D77;&#x5BFC;&#x81F4;&#x539F;&#x6765;&#x7684;&#x754C;&#x9762;&#x88AB;&#x6324;&#x4E0A;&#x53BB;&#xFF0C;&#x6216;&#x8005;&#x5BFC;&#x81F4;&#x754C;&#x9762;&#x4E0B;&#x9762;&#x7684;tab&#x5BFC;&#x822A;&#x88AB;&#x6324;&#x4E0A;&#x53BB;&#xFF0C;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-光标详解"><span class="nav-number">6.</span> <span class="nav-text"><a href="#8-&#x5149;&#x6807;&#x8BE6;&#x89E3;" class="headerlink" title="8.&#x5149;&#x6807;&#x8BE6;&#x89E3;"></a>8.&#x5149;&#x6807;&#x8BE6;&#x89E3;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-EditText-属性汇总"><span class="nav-number">7.</span> <span class="nav-text"><a href="#Android-EditText-&#x5C5E;&#x6027;&#x6C47;&#x603B;" class="headerlink" title="Android EditText &#x5C5E;&#x6027;&#x6C47;&#x603B;"></a>Android EditText &#x5C5E;&#x6027;&#x6C47;&#x603B;</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+    <!--添加音乐-->
+    <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=34229976&auto=0&height=66"></iframe>
+          </iframe>
+      </div>
+
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-battery-three-quarters" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LanQinHui</span>
+</div>
+
+
+<!--
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+-->
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt66eaWe';
+      var conf = 'f4ba04d45ba4c9c0cb8a03cc00c2f126';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("2XPzqkLNPidmACGrFk7GNxA0-gzGzoHsz", "bYP8YtXKqQpgXXVYekggg7iU");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!>
+<!--动态背景-->
+<script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<!--背景颜色渐变-->
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+</body>
+</html>

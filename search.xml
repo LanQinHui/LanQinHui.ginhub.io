@@ -5,4 +5,85 @@
     <url>%2F2017%2F12%2F17%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
   </entry>
+  <entry>
+    <title><![CDATA[Eclipse中安装Hibernate插件]]></title>
+    <url>%2F2017%2F08%2F11%2FEclipse%E4%B8%AD%E5%AE%89%E8%A3%85Hibernate%E6%8F%92%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[在使用hibernate开发时，大多数情况下涉及到其XML配置文件的编辑，尤其是.cfg.xml（配置文件）和hbm.xml（关系映射文件）这两种。为了更方便的使用此框架，其插件的安装是很有必要的。一、下载Hibernate框架的插件：JBOOS Tool官网链接： http://tools.jboss.org/downloads/overview.html 二 安装插件打开Eclipse—&gt;Help—-&gt;Install New SoftWare—–&gt;add—-&gt;Archive（找到你的插件–打开）——&gt;Ok——&gt;选中 JBoss Tools hibernatetools Nightly Build Update Site—–&gt;next—–等待一段时间—-&gt;next—–&gt;next—–&gt;I accept…..—-&gt;finish——&gt;开始安装Install SoftWare——&gt;安装好之后会问你是否重启Eclipse，点击OK（需要restart eclipse） 关联提示 路径：\hibernate-release-5.2.2.Final\project\hibernate-core\src\main\resources\org\hibernate之后就有提示了。 之后就会有提示了]]></content>
+      <tags>
+        <tag>Eclipse</tag>
+        <tag>Hibernate</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Eclipse的快捷键一览]]></title>
+    <url>%2F2017%2F08%2F10%2FEclipse%E7%9A%84%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%B8%80%E8%A7%88%2F</url>
+    <content type="text"><![CDATA[在Eclipse开发中，如果知道某些快捷键，一定会让你的工作提高不少效率。本文对Eclipse的快捷键做了个总结。 编辑123456789101112131415161718192021222324252627分类 功能 快捷键 场合编辑 显示内容输入辅助窗口 Ctrl+Space 窗口或对话框编辑 Context Information Ctrl+Shift+Space 窗口编辑 Copy Ctrl+C 窗口或对话框编辑 Copy Ctrl+Insert 窗口或对话框编辑 Cut Ctrl+X 窗口或对话框编辑 Cut Shift+Delete 窗口或对话框编辑 Delete Delete 窗口编辑 （搜索）跳转到下一个匹配结果 Ctrl+K 文本编辑时编辑 （搜索）跳转到上一个匹配结果 Ctrl+Shift+K 文本编辑时编辑 查找置换 Ctrl+F 窗口编辑 Incremental Find Ctrl+J 文本编辑时编辑 Incremental Find Reverse Ctrl+Shift+J 文本编辑时编辑 粘贴 Ctrl+V 窗口或对话框编辑 粘贴 Shift+Insert 窗口或对话框编辑 Quick Diff Toggle Ctrl+Shift+Q 文本编辑时编辑 Quick Fix Ctrl+1 窗口编辑 Redo Ctrl+Y 窗口编辑 Restore Last Selection Alt+Shift+Down JAVA源代码编辑窗口编辑 Select All Ctrl+A 窗口或对话框编辑 Select Enclosing Element Alt+Shift+Up JAVA源代码编辑窗口编辑 Select Next Element Alt+Shift+Right JAVA源代码编辑窗口编辑 Select Previous Element Alt+Shift+Left JAVA源代码编辑窗口编辑 Show Tooltip Description F2 JAVA源代码编辑窗口编辑 Toggle Insert Mode Ctrl+Shift+Insert 文本编辑时编辑 Undo Ctrl+Z 窗口编辑 Word Completion Alt+/ 文本编辑时 文件 导航 Refactor Run/Debug123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172分类 功能 快捷键 场合文件 Close Ctrl+F4 窗口文件 Close Ctrl+W 窗口文件 Close All Ctrl+Shift+F4 窗口文件 Close All Ctrl+Shift+W 窗口文件 New Ctrl+N 窗口文件 New menu Alt+Shift+N 窗口文件 Print Ctrl+P 窗口文件 Properties Alt+Enter 窗口文件 Refresh F5 窗口文件 Rename F2 窗口文件 Save Ctrl+S 窗口文件 Save All Ctrl+Shift+S 窗口导航 Backward History Alt+Left 窗口导航 Forward History Alt+Right 窗口导航 Go to Line Ctrl+L 文本编辑时导航 Go to Matching Bracket Ctrl+Shift+P JAVA源代码编辑窗口导航 Go to Next Member Ctrl+Shift+Down JAVA源代码编辑窗口导航 Go to Previous Member Ctrl+Shift+Up JAVA源代码编辑窗口导航 Last Edit Location Ctrl+Q 窗口导航 Next Ctrl+. 窗口导航 Open Call Hierarchy Ctrl+Alt+H 窗口导航 Open Declaration F3 窗口导航 Open External Javadoc Shift+F2 窗口导航 Open Re源代码 Ctrl+Shift+R 窗口导航 Open Structure Ctrl+F3 JAVA源代码编辑窗口导航 Open Type Ctrl+Shift+T 窗口导航 Open Type Hierarchy F4 窗口导航 Open Type in Hierarchy Ctrl+Shift+H 窗口导航 Previous Ctrl+, 窗口导航 Quick Hierarchy Ctrl+T JAVA源代码编辑窗口导航 Quick Outline Ctrl+O JAVA源代码编辑窗口导航 Show In menu Alt+Shift+W 窗口项目 Build All Ctrl+B 窗口Refactor - Java Change Method Signature Alt+Shift+C 窗口Refactor - Java Convert Local Variable to Field Alt+Shift+F JAVA源代码编辑窗口Refactor - Java Extract Local Variable Alt+Shift+L 窗口Refactor - Java Extract Method Alt+Shift+M 窗口Refactor - Java Inline Alt+Shift+I 窗口Refactor - Java Move - Refactoring Alt+Shift+V 窗口Refactor - Java Redo - Refactoring Alt+Shift+Y 窗口Refactor - Java Rename - Refactoring Alt+Shift+R 窗口Refactor - Java Show Refactor Quick Menu Alt+Shift+T 窗口Refactor - Java Undo - Refactoring Alt+Shift+Z 窗口Run/Debug Debug Ant Build Alt+Shift+D Q 窗口Run/Debug Debug Eclipse Application Alt+Shift+D E 窗口Run/Debug Debug JUnit Plug-in Test Alt+Shift+D P 窗口Run/Debug Debug JUnit Test Alt+Shift+D T 窗口Run/Debug Debug Java Applet Alt+Shift+D A 窗口Run/Debug Debug Java Application Alt+Shift+D J 窗口Run/Debug Debug Last Launched F11 窗口Run/Debug Debug SWT Application Alt+Shift+D S 窗口Run/Debug Display Ctrl+Shift+D 窗口或对话框Run/Debug EOF Ctrl+Z Console窗口Run/Debug Execute Ctrl+U 窗口Run/Debug Inspect Ctrl+Shift+I 窗口或对话框Run/Debug Resume F8 调试时Run/Debug Run Ant Build Alt+Shift+X Q 窗口Run/Debug Run Eclipse Application Alt+Shift+X E 窗口Run/Debug Run JUnit Plug-in Test Alt+Shift+X P 窗口Run/Debug Run JUnit Test Alt+Shift+X T 窗口Run/Debug Run Java Applet Alt+Shift+X A 窗口Run/Debug Run Java Application Alt+Shift+X J 窗口Run/Debug Run Last Launched Ctrl+F11 窗口Run/Debug Run SWT Application Alt+Shift+X S 窗口Run/Debug Run to Line Ctrl+R 调试时Run/Debug Step Into F5 调试时Run/Debug Step Into Selection Ctrl+F5 调试时Run/Debug Step Over F6 调试时Run/Debug Step Return F7 调试时Run/Debug Toggle Line Breakpoint Ctrl+Shift+B 窗口Run/Debug Toggle Step Filters Shift+F5 窗口]]></content>
+      <tags>
+        <tag>Eclipse</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[通过sql操作数据库]]></title>
+    <url>%2F2017%2F08%2F10%2F%E9%80%9A%E8%BF%87sql%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[前言：123456789101112+--------------------+| Database |+--------------------+| information_schema | 保存了跟mysql相关的元数据（meta data）表名字 字段名字| mysql | 保存了mysql的用户信息 权限相关的信息| performance_schema | 保存了mysql在运行的时候产生的一些日志| sakila || sys || world |+--------------------+前三个数据库不要修改、删除 一、使用SQL操作数据库1、连接数据库Mysql -u root -p 密码；2、创建数据库Create database 要创建的数据库名称；3、查看所有的数据库Show database；4、删除数据库Drop database 要删除的数据库名称；5、切换数据库名称Use 要切换的数据库名称；6、查看现在用的是哪个数据库Show database();二、使用SQL操作数据库表1、创建表12345Craete table 表名字( 字段 类型， 字段 类型， ……) 2、查看表结构Desc 表名称；3、删除表Drop table 要删除的表名称;4、查看当前数据库所有表Show tables；三、MySQL常用的数据类型1、字符串型-Varchar 如果输入的字段内容没有达到声明长度的上限这个时候 只占用当前字符串长度所占的长度-char 直接分配20个字节2、大数据类型-Blob、 非文本类型比较长的数据Text 比较长的文本3、数值型123456-Tinyint、 byte-Smallint、short-Int、int-Bigint、long-Float、float-Double、double 4、逻辑性-Bit、boolean5、日期型1234-Date、日期-Time、时间-Datetime、日期和时间-Timestamp、时间戳 四、使用SQL操作数据库表记录1、插入记录-insert into 表名 values（要添加的值）;当添加的字段的数据类型是int类型，直接写值当添加的字段的数据类型是varchar类型和日期类型，使用单括号把值包起来2、修改记录Update 表名 set 字段名1 = 值1 ，字段名2= 值2 ，where条件；3、删除记录Delete from 表名 where 条件；4、查询记录Select 字段名（*）as 别名 from 表名 where 条件；5、去除表中重复记录Select distinct * from 表名]]></content>
+      <tags>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[android imageButton 点击按钮前中后，按钮颜色的变化]]></title>
+    <url>%2F2017%2F08%2F10%2Fandroid%20imageButton%20%E7%82%B9%E5%87%BB%E6%8C%89%E9%92%AE%E5%89%8D%E4%B8%AD%E5%90%8E%EF%BC%8C%E6%8C%89%E9%92%AE%E9%A2%9C%E8%89%B2%E7%9A%84%E5%8F%98%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[1.EditText输入限制规则我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res/drawable目录中建立这样一个XML文件： 12345678910selector.xml &lt;selector xmlns:android="http://schemas.android.com/apk/res/android"&gt; &lt;item android:state_window_focused="false" android:drawable="@drawable/t3"/&gt; &lt;item android:state_focused="true" android:drawable="@drawable/t1"/&gt; &lt;item android:state_pressed="true" android:drawable="@drawable/t2"/&gt; &lt;item android:drawable="@drawable/t3"/&gt; &lt;/selector&gt; 正如上面的资源文件所描述的，我们在这里定义了三种行为各自的图片资源，接下来，我们只需要在相应的按钮中,将背景资源指定为drawable/selector，就完成我们需要做的一切了～1234&lt;ImageButton android:layout_width="100px" android:layout_height="50px" android:src="@drawable/selector"]]></content>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SharedPreferences详解]]></title>
+    <url>%2F2017%2F08%2F10%2FSharedPreferences%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[1.获取SharedPreferences的两种方式:1 调用Context对象的getSharedPreferences()方法2 调用Activity对象的getPreferences()方法两种方式的区别: 12调用Context对象的getSharedPreferences()方法获得的SharedPreferences对象可以被同一应用程序下的其他组件共享.调用Activity对象的getPreferences()方法获得的SharedPreferences对象只能在该Activity中使用. SharedPreferences的四种操作模式:12345678910111213141516171819Context.MODE_PRIVATEContext.MODE_APPENDContext.MODE_WORLD_READABLEContext.MODE_WORLD_WRITEABLE``` ### Context.MODE_PRIVATE：为默认操作模式,代表该文件是私有数据,只能被应用本身访问,在该模式下,写入的内容会覆盖原文件的内容### Context.MODE_APPEND：模式会检查文件是否存在,存在就往文件追加内容,否则就创建新文件.### Context.MODE_WORLD_READABLE和Context.MODE_WORLD_WRITEABLE用来控制其他应用是否有权限读写该文件.### MODE_WORLD_READABLE：表示当前文件可以被其他应用读取.### MODE_WORLD_WRITEABLE：表示当前文件可以被其他应用写入.### 将数据保存至SharedPreferences:``` bashSharedPreferences preferences=getSharedPreferences("user",Context.MODE_PRIVATE);Editor editor=preferences.edit();String name="xixi";String age="22";editor.putString("name", name);editor.putString("age", age);editor.commit(); 从SharedPreferences获取数据:123SharedPreferences preferences=getSharedPreferences("user", Context.MODE_PRIVATE);String name=preferences.getString("name", "defaultname");String age=preferences.getString("age", "0");]]></content>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[GOUT项目]]></title>
+    <url>%2F2017%2F08%2F06%2FGOUT%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[角色 产品经理，产品狗，产品汪（萌妹子） 原型图、 需求文档 开发人员，码农，屌丝，攻城师 Android开发工程师、 IOS工程师、 服务器端Java Web：接口文档 美工 UI设计师，视觉设计师，切图（res下的资源图片），效果图（产品未完成，UI设计师设计完成后的软件效果图）。 测试 运营 销售，推广，打广告，写软文 开发流程 需求分析（归老板和产品经理） 聊天 语音聊天、文字聊天 运动 约运动 朋友圈 。。。 产品设计 需求文档，原型图 需求评估 需要多长时间开发完，2-3个月，迭代更新新功能，2-3个人，不超过5个人 开始开发 燃尽图 提交测试 第一轮测试-&gt;回归测试 第二轮测试-&gt;回归测试 级别：A（严重），B（重要），C（一般），D（小bug） 发布上线 将apk打包提交到应用市场 外包公司 接活，弄完一个接下一个。 产品公司 产品发布之后，维护迭代 迭代开发 1.0-&gt;2.0-&gt;3.0, 20天左右一个迭代，版本更新。]]></content>
+      <tags>
+        <tag>GOUT项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo的一些配置]]></title>
+    <url>%2F2017%2F07%2F06%2Feclipse%E6%80%8E%E4%B9%88%E5%85%B3%E8%81%94mysql%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%BA%90%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。 2、在主题下的 themes//_config.yml在menu这一项对应的链接名称下添加路径。 在主题的source和hexo下的source有什么区别？12在主题下，会离开主页面，在hexo下的话，还是主界面。404界面可以放在主题的source下。但是主题下的超链接 还是在主题下的themes/&lt;theme_name&gt;/_config.yml更改的。 3、使用标签来隐藏其下面的内容~4、标签使用123tags: - 标签1 - 标签2 5、每页显示多少篇文章，分页效果如何设置？类似于上图，每一页显示几篇文章，我们打开主目录下的_config.yml,找到下端代码的位置，修改per_page后面的参数就行，例如我的就是每页五篇文章123## Set per_page to 0 to disable paginationper_page: 5pagination_dir: page]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo的一些配置]]></title>
+    <url>%2F2017%2F07%2F06%2Fhexo%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。 2、在主题下的 themes//_config.yml在menu这一项对应的链接名称下添加路径。 在主题的source和hexo下的source有什么区别？12在主题下，会离开主页面，在hexo下的话，还是主界面。404界面可以放在主题的source下。但是主题下的超链接 还是在主题下的themes/&lt;theme_name&gt;/_config.yml更改的。 3、使用标签来隐藏其下面的内容~4、标签使用123tags: - 标签1 - 标签2 5、每页显示多少篇文章，分页效果如何设置？类似于上图，每一页显示几篇文章，我们打开主目录下的_config.yml,找到下端代码的位置，修改per_page后面的参数就行，例如我的就是每页五篇文章123## Set per_page to 0 to disable paginationper_page: 5pagination_dir: page]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android中EditText设置属性和设置输入规则]]></title>
+    <url>%2F2017%2F07%2F05%2FAndroid%EF%BC%9A%20EditText%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%92%8C%E8%AE%BE%E7%BD%AE%E8%BE%93%E5%85%A5%E8%A7%84%E5%88%99%2F</url>
+    <content type="text"><![CDATA[1.EditText输入限制规则12345$ 在xml:EditText 设置属性android:digits="ABCDE123&amp;*"ABCDE123&amp;*是你的限制规则例如：android:digits="0123456789abc"规则是只能输入英文字母（小写）abc和数字 2.EditTex输入的文字为密码形式(1)、在xml中设置1android:password="true" //以"."形式显示文本 (2)、在代码里设置123通过设置EditTex的setTransformationMethod()方法来实现隐藏密码和显示密码editText.setTransformationMethod(PasswordTransformationMethod.getInstance());//设置密码不可见 3.EditTex输入的文字为电话号码1android:phoneNumber="true"//输入电话号码 4.EditTex字数限制1234### （1）在xml中设置android:maxLength="50"### (2)在代码中设置editText.setFilters(new InputFilter[]&#123;newInputFilter.LengthFilter(100)&#125;); 6.在EditText中软键盘的调起、关闭（1）EditTex有焦点（focusable为true）阻止输入法弹出12345editText.setOnTouchListener(new OnTouchListener()&#123;public boolean onTouch(View view,MotionEvent event)&#123;editText.setInputType(Input.TYPE_NULL);//关闭软键盘return false;&#125;&#125;); (2)EditText无焦点（focusable=false)12InputMethodManager imm=(InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);imm.hideSoftInputFromWindow(editText.getWindowToken(),0); (3)调用数字键盘并设置输入类型和键盘为英文12editText.setInputType(InputType.TYPE_CLASS_NUMBER);//调用数字键盘editText.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);//英文 （4）键盘永远不会弹出1android:focusable="false"// 键盘永不弹出 7.软键盘的调起导致原来的界面被挤上去，或者导致界面下面的tab导航被挤上去，解决方法如下123使用Mainfest中的Activity的android:windowSfotInputMdoe的“adjustPan"属性另外注意：有关软键盘的问题可参考android:windowSoftInputMode中的属性，下面可防止toolbar与EditText共用出现的toolBar拉伸现象。android:windowSoftInputMode="stateVisible|adjustPan|stateHidden" 8.光标详解12345editText.requestFocusFromTouch();//让光标放入到点击位置editText.requestFocus();//默认方式获得焦点editText editor=(EditText)getCurrentView();//光标插入int cursor=editor.getSelectionStart();//光标插入editor.getText().inset(cursor,delta); Android EditText 属性汇总12345678910111213141516171819202122android:layout_gravity="center_vertical" 设置控件显示的位置：默认top，这里居中显示，还有bottom android:hint="请输入数字！"设置显示在空间上的提示信息 android:numeric="integer" 设置只能输入整数，如果是小数则是：decimal android:singleLine="true" 设置单行输入，一旦设置为true，则文字不会自动换行。android:password="true" 设置只能输入密码android:textColor = "#ff8c00" 字体颜色android:textStyle="bold" 字体，bold, italic, bolditalic android:textSize="20dip" 大小android:capitalize = "characters" 以大写字母写android:textAlign="center" EditText没有这个属性，但TextView有 android:textColorHighlight="#cccccc" 被选中文字的底色，默认为蓝色android:textColorHint="#ffff00" 设置提示信息文字的颜色，默认为灰色 android:textScaleX="1.5" 控制字与字之间的间距android:typeface="monospace" 字型，normal, sans, serif, monospace android:background="@null" 空间背景，这里没有，指透明android:layout_weight="1" 权重，控制控件之间的地位,在控制控件显示的大小时蛮有用的。android:textAppearance="?android:attr/textAppearanceLargeInverse" 文字外观，这里引用的是系统自带的一个外观，？表示系统是否有这种外观，否则使用默认的外观。不知道这样理解对不对？ 通过EditText的layout xml文件中的相关属性来实现:``` ### 1. 密码框属性 android:password="true"这条可以让EditText显示的内容自动为星号，输入时内容会在1秒内变成*字样。### 2. 纯数字 android:numeric="true"这条可以让输入法自动变为数字输入键盘，同时仅允许0-9的数字输入### 3. 仅允许 android:capitalize="cwj1987"```bash这样仅允许接受输入cwj1987，一般用于密码验证 下面是一些扩展的风格属性android:editable="false" 设置EditText不可编辑android:singleLine="true" 强制输入的内容在单行android:ellipsize="end" 自动隐藏尾部溢出数据，一般用于文字内容过长一行无法全部显示时]]></content>
+      <tags>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[考试]]></title>
+    <url>%2F2017%2F07%2F03%2F%E8%80%83%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[这是大二下学期的期末考试安排7.02大英4B111：00-12：10 现教3号机房 7.03JSP110：50-12.20 现教院15号机房 7.04数据结构118：50-20：20现教院8号机房 7.11电路114：30-16：10--计院205B 7.12PHP111：00-12：40--计院205B 7.13面向对象111：00-12：40--计院205B]]></content>
+      <tags>
+        <tag>课表</tag>
+      </tags>
+  </entry>
 </search>

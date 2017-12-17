@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数据库," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/23704127?s=400&u=c75c4246802d5a205aabbeff5480f472b834aa3f&v=4?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="前言：123456789101112+--------------------+| Database           |+--------------------+| information_schema |          保存了跟mysql相关的元数据（meta data）表名字 字段名字| mysql              |                        保存了m">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过sql操作数据库">
+<meta property="og:url" content="http://www.fly-lqhwjn.com/2017/08/10/通过sql操作数据库/index.html">
+<meta property="og:site_name" content="LanQinHui">
+<meta property="og:description" content="前言：123456789101112+--------------------+| Database           |+--------------------+| information_schema |          保存了跟mysql相关的元数据（meta data）表名字 字段名字| mysql              |                        保存了m">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-10T04:16:01.567Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="通过sql操作数据库">
+<meta name="twitter:description" content="前言：123456789101112+--------------------+| Database           |+--------------------+| information_schema |          保存了跟mysql相关的元数据（meta data）表名字 字段名字| mysql              |                        保存了m">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.fly-lqhwjn.com/2017/08/10/通过sql操作数据库/"/>
+
+
+
+
+
+  <title>通过sql操作数据库 | LanQinHui</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+<a href="https://github.com/LanQinHui"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">LanQinHui</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">且行且珍惜</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-life">
+          <a href="/life" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            生活
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/photos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            照片
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-download">
+          <a href="/download" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cloud-download"></i> <br />
+            
+            下载
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/commonweal/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.fly-lqhwjn.com/2017/08/10/通过sql操作数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LanQinHui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/23704127?s=400&u=c75c4246802d5a205aabbeff5480f472b834aa3f&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LanQinHui">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">通过sql操作数据库</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-10T12:10:40+08:00">
+                2017-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/08/10/通过sql操作数据库/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/08/10/通过sql操作数据库/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2017/08/10/通过sql操作数据库/" class="leancloud_visitors" data-flag-title="通过sql操作数据库">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count">
+                 </span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  537
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |          保存了跟mysql相关的元数据（meta data）表名字 字段名字</span><br><span class="line">| mysql              |                        保存了mysql的用户信息 权限相关的信息</span><br><span class="line">| performance_schema |        保存了mysql在运行的时候产生的一些日志</span><br><span class="line">| sakila             |</span><br><span class="line">| sys                |</span><br><span class="line">| world              |</span><br><span class="line">+--------------------+</span><br><span class="line"></span><br><span class="line">前三个数据库不要修改、删除</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="一、使用SQL操作数据库"><a href="#一、使用SQL操作数据库" class="headerlink" title="一、使用SQL操作数据库"></a>一、使用SQL操作数据库</h1><h2 id="1、连接数据库"><a href="#1、连接数据库" class="headerlink" title="1、连接数据库"></a>1、连接数据库</h2><h2 id="Mysql-u-root-p-密码；"><a href="#Mysql-u-root-p-密码；" class="headerlink" title="Mysql -u root -p 密码；"></a>Mysql -u root -p 密码；</h2><h2 id="2、创建数据库"><a href="#2、创建数据库" class="headerlink" title="2、创建数据库"></a>2、创建数据库</h2><h3 id="Create-database-要创建的数据库名称；"><a href="#Create-database-要创建的数据库名称；" class="headerlink" title="Create database 要创建的数据库名称；"></a>Create database 要创建的数据库名称；</h3><h2 id="3、查看所有的数据库"><a href="#3、查看所有的数据库" class="headerlink" title="3、查看所有的数据库"></a>3、查看所有的数据库</h2><h3 id="Show-database；"><a href="#Show-database；" class="headerlink" title="Show database；"></a>Show database；</h3><h2 id="4、删除数据库"><a href="#4、删除数据库" class="headerlink" title="4、删除数据库"></a>4、删除数据库</h2><h3 id="Drop-database-要删除的数据库名称；"><a href="#Drop-database-要删除的数据库名称；" class="headerlink" title="Drop database 要删除的数据库名称；"></a>Drop database 要删除的数据库名称；</h3><h2 id="5、切换数据库名称"><a href="#5、切换数据库名称" class="headerlink" title="5、切换数据库名称"></a>5、切换数据库名称</h2><h3 id="Use-要切换的数据库名称；"><a href="#Use-要切换的数据库名称；" class="headerlink" title="Use 要切换的数据库名称；"></a>Use 要切换的数据库名称；</h3><h2 id="6、查看现在用的是哪个数据库"><a href="#6、查看现在用的是哪个数据库" class="headerlink" title="6、查看现在用的是哪个数据库"></a>6、查看现在用的是哪个数据库</h2><h3 id="Show-database"><a href="#Show-database" class="headerlink" title="Show database();"></a>Show database();</h3><h1 id="二、使用SQL操作数据库表"><a href="#二、使用SQL操作数据库表" class="headerlink" title="二、使用SQL操作数据库表"></a>二、使用SQL操作数据库表</h1><h2 id="1、创建表"><a href="#1、创建表" class="headerlink" title="1、创建表"></a>1、创建表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Craete table 表名字(</span><br><span class="line">	字段 类型，</span><br><span class="line">	字段 类型，</span><br><span class="line">	……</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="2、查看表结构"><a href="#2、查看表结构" class="headerlink" title="2、查看表结构"></a>2、查看表结构</h2><h3 id="Desc-表名称；"><a href="#Desc-表名称；" class="headerlink" title="Desc 表名称；"></a>Desc 表名称；</h3><h2 id="3、删除表"><a href="#3、删除表" class="headerlink" title="3、删除表"></a>3、删除表</h2><h3 id="Drop-table-要删除的表名称"><a href="#Drop-table-要删除的表名称" class="headerlink" title="Drop table 要删除的表名称;"></a>Drop table 要删除的表名称;</h3><h2 id="4、查看当前数据库所有表"><a href="#4、查看当前数据库所有表" class="headerlink" title="4、查看当前数据库所有表"></a>4、查看当前数据库所有表</h2><h3 id="Show-tables；"><a href="#Show-tables；" class="headerlink" title="Show tables；"></a>Show tables；</h3><h1 id="三、MySQL常用的数据类型"><a href="#三、MySQL常用的数据类型" class="headerlink" title="三、MySQL常用的数据类型"></a>三、MySQL常用的数据类型</h1><h2 id="1、字符串型"><a href="#1、字符串型" class="headerlink" title="1、字符串型"></a>1、字符串型</h2><h3 id="Varchar-如果输入的字段内容没有达到声明长度的上限这个时候-只占用当前字符串长度所占的长度"><a href="#Varchar-如果输入的字段内容没有达到声明长度的上限这个时候-只占用当前字符串长度所占的长度" class="headerlink" title="-Varchar  如果输入的字段内容没有达到声明长度的上限这个时候 只占用当前字符串长度所占的长度"></a>-Varchar  如果输入的字段内容没有达到声明长度的上限这个时候 只占用当前字符串长度所占的长度</h3><h3 id="char-直接分配20个字节"><a href="#char-直接分配20个字节" class="headerlink" title="-char        直接分配20个字节"></a>-char        直接分配20个字节</h3><h2 id="2、大数据类型"><a href="#2、大数据类型" class="headerlink" title="2、大数据类型"></a>2、大数据类型</h2><h3 id="Blob、-非文本类型比较长的数据"><a href="#Blob、-非文本类型比较长的数据" class="headerlink" title="-Blob、   非文本类型比较长的数据"></a>-Blob、   非文本类型比较长的数据</h3><h3 id="Text-比较长的文本"><a href="#Text-比较长的文本" class="headerlink" title="Text         比较长的文本"></a>Text         比较长的文本</h3><h2 id="3、数值型"><a href="#3、数值型" class="headerlink" title="3、数值型"></a>3、数值型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-Tinyint、 byte</span><br><span class="line">-Smallint、short</span><br><span class="line">-Int、int</span><br><span class="line">-Bigint、long</span><br><span class="line">-Float、<span class="built_in">float</span></span><br><span class="line">-Double、double</span><br></pre></td></tr></table></figure>
+<h2 id="4、逻辑性"><a href="#4、逻辑性" class="headerlink" title="4、逻辑性"></a>4、逻辑性</h2><h3 id="Bit、boolean"><a href="#Bit、boolean" class="headerlink" title="-Bit、boolean"></a>-Bit、boolean</h3><h2 id="5、日期型"><a href="#5、日期型" class="headerlink" title="5、日期型"></a>5、日期型</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-Date、日期</span><br><span class="line">-Time、时间</span><br><span class="line">-Datetime、日期和时间</span><br><span class="line">-Timestamp、时间戳</span><br></pre></td></tr></table></figure>
+<h1 id="四、使用SQL操作数据库表记录"><a href="#四、使用SQL操作数据库表记录" class="headerlink" title="四、使用SQL操作数据库表记录"></a>四、使用SQL操作数据库表记录</h1><h2 id="1、插入记录"><a href="#1、插入记录" class="headerlink" title="1、插入记录"></a>1、插入记录</h2><h3 id="insert-into-表名-values（要添加的值）"><a href="#insert-into-表名-values（要添加的值）" class="headerlink" title="-insert into 表名 values（要添加的值）;"></a>-insert into 表名 values（要添加的值）;</h3><h3 id="当添加的字段的数据类型是int类型，直接写值"><a href="#当添加的字段的数据类型是int类型，直接写值" class="headerlink" title="当添加的字段的数据类型是int类型，直接写值"></a>当添加的字段的数据类型是int类型，直接写值</h3><h3 id="当添加的字段的数据类型是varchar类型和日期类型，使用单括号把值包起来"><a href="#当添加的字段的数据类型是varchar类型和日期类型，使用单括号把值包起来" class="headerlink" title="当添加的字段的数据类型是varchar类型和日期类型，使用单括号把值包起来"></a>当添加的字段的数据类型是varchar类型和日期类型，使用单括号把值包起来</h3><h2 id="2、修改记录"><a href="#2、修改记录" class="headerlink" title="2、修改记录"></a>2、修改记录</h2><h3 id="Update-表名-set-字段名1-值1-，字段名2-值2-，where条件；"><a href="#Update-表名-set-字段名1-值1-，字段名2-值2-，where条件；" class="headerlink" title="Update 表名 set 字段名1 = 值1 ，字段名2= 值2 ，where条件；"></a>Update 表名 set 字段名1 = 值1 ，字段名2= 值2 ，where条件；</h3><h2 id="3、删除记录"><a href="#3、删除记录" class="headerlink" title="3、删除记录"></a>3、删除记录</h2><h3 id="Delete-from-表名-where-条件；"><a href="#Delete-from-表名-where-条件；" class="headerlink" title="Delete from 表名 where 条件；"></a>Delete from 表名 where 条件；</h3><h2 id="4、查询记录"><a href="#4、查询记录" class="headerlink" title="4、查询记录"></a>4、查询记录</h2><h3 id="Select-字段名（-）as-别名-from-表名-where-条件；"><a href="#Select-字段名（-）as-别名-from-表名-where-条件；" class="headerlink" title="Select 字段名（*）as 别名 from 表名 where 条件；"></a>Select 字段名（*）as 别名 from 表名 where 条件；</h3><h2 id="5、去除表中重复记录"><a href="#5、去除表中重复记录" class="headerlink" title="5、去除表中重复记录"></a>5、去除表中重复记录</h2><h3 id="Select-distinct-from-表名"><a href="#Select-distinct-from-表名" class="headerlink" title="Select distinct * from 表名"></a>Select distinct * from 表名</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" rel="next" title="android imageButton 点击按钮前中后，按钮颜色的变化">
+                <i class="fa fa-chevron-left"></i> android imageButton 点击按钮前中后，按钮颜色的变化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/10/Eclipse的快捷键一览/" rel="prev" title="Eclipse的快捷键一览">
+                Eclipse的快捷键一览 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/23704127?s=400&u=c75c4246802d5a205aabbeff5480f472b834aa3f&v=4"
+               alt="LanQinHui" />
+          <p class="site-author-name" itemprop="name">LanQinHui</p>
+           
+              <p class="site-description motion-element" itemprop="description">学如逆水行舟，不进则退</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LanQinHui" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/ac149ed0d520/timeline" target="_blank" title="简书">
+                  
+                    <i class="fa fa-fw fa-inbox"></i>
+                  
+                    
+                      简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://juejin.im/user/593fbb5bac502e006b5b8e7e" target="_blank" title="掘金">
+                  
+                    <i class="fa fa-fw fa-legal"></i>
+                  
+                    
+                      掘金
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x524D;&#x8A00;&#xFF1A;" class="headerlink" title="&#x524D;&#x8A00;&#xFF1A;"></a>&#x524D;&#x8A00;&#xFF1A;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一、使用SQL操作数据库"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x4E00;&#x3001;&#x4F7F;&#x7528;SQL&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="&#x4E00;&#x3001;&#x4F7F;&#x7528;SQL&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;"></a>&#x4E00;&#x3001;&#x4F7F;&#x7528;SQL&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、连接数据库"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#1&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="1&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;"></a>1&#x3001;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-u-root-p-密码；"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#Mysql-u-root-p-&#x5BC6;&#x7801;&#xFF1B;" class="headerlink" title="Mysql -u root -p &#x5BC6;&#x7801;&#xFF1B;"></a>Mysql -u root -p &#x5BC6;&#x7801;&#xFF1B;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、创建数据库"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#2&#x3001;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="2&#x3001;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;"></a>2&#x3001;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-database-要创建的数据库名称；"><span class="nav-number">2.3.1.</span> <span class="nav-text"><a href="#Create-database-&#x8981;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF1B;" class="headerlink" title="Create database &#x8981;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF1B;"></a>Create database &#x8981;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF1B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、查看所有的数据库"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#3&#x3001;&#x67E5;&#x770B;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="3&#x3001;&#x67E5;&#x770B;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5E93;"></a>3&#x3001;&#x67E5;&#x770B;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5E93;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-database；"><span class="nav-number">2.4.1.</span> <span class="nav-text"><a href="#Show-database&#xFF1B;" class="headerlink" title="Show database&#xFF1B;"></a>Show database&#xFF1B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、删除数据库"><span class="nav-number">2.5.</span> <span class="nav-text"><a href="#4&#x3001;&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="4&#x3001;&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;"></a>4&#x3001;&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Drop-database-要删除的数据库名称；"><span class="nav-number">2.5.1.</span> <span class="nav-text"><a href="#Drop-database-&#x8981;&#x5220;&#x9664;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF1B;" class="headerlink" title="Drop database &#x8981;&#x5220;&#x9664;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF1B;"></a>Drop database &#x8981;&#x5220;&#x9664;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF1B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、切换数据库名称"><span class="nav-number">2.6.</span> <span class="nav-text"><a href="#5&#x3001;&#x5207;&#x6362;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;" class="headerlink" title="5&#x3001;&#x5207;&#x6362;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;"></a>5&#x3001;&#x5207;&#x6362;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Use-要切换的数据库名称；"><span class="nav-number">2.6.1.</span> <span class="nav-text"><a href="#Use-&#x8981;&#x5207;&#x6362;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF1B;" class="headerlink" title="Use &#x8981;&#x5207;&#x6362;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF1B;"></a>Use &#x8981;&#x5207;&#x6362;&#x7684;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#xFF1B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、查看现在用的是哪个数据库"><span class="nav-number">2.7.</span> <span class="nav-text"><a href="#6&#x3001;&#x67E5;&#x770B;&#x73B0;&#x5728;&#x7528;&#x7684;&#x662F;&#x54EA;&#x4E2A;&#x6570;&#x636E;&#x5E93;" class="headerlink" title="6&#x3001;&#x67E5;&#x770B;&#x73B0;&#x5728;&#x7528;&#x7684;&#x662F;&#x54EA;&#x4E2A;&#x6570;&#x636E;&#x5E93;"></a>6&#x3001;&#x67E5;&#x770B;&#x73B0;&#x5728;&#x7528;&#x7684;&#x662F;&#x54EA;&#x4E2A;&#x6570;&#x636E;&#x5E93;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-database"><span class="nav-number">2.7.1.</span> <span class="nav-text"><a href="#Show-database" class="headerlink" title="Show database();"></a>Show database();</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、使用SQL操作数据库表"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x4E8C;&#x3001;&#x4F7F;&#x7528;SQL&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x8868;" class="headerlink" title="&#x4E8C;&#x3001;&#x4F7F;&#x7528;SQL&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x8868;"></a>&#x4E8C;&#x3001;&#x4F7F;&#x7528;SQL&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x8868;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、创建表"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#1&#x3001;&#x521B;&#x5EFA;&#x8868;" class="headerlink" title="1&#x3001;&#x521B;&#x5EFA;&#x8868;"></a>1&#x3001;&#x521B;&#x5EFA;&#x8868;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、查看表结构"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#2&#x3001;&#x67E5;&#x770B;&#x8868;&#x7ED3;&#x6784;" class="headerlink" title="2&#x3001;&#x67E5;&#x770B;&#x8868;&#x7ED3;&#x6784;"></a>2&#x3001;&#x67E5;&#x770B;&#x8868;&#x7ED3;&#x6784;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Desc-表名称；"><span class="nav-number">3.2.1.</span> <span class="nav-text"><a href="#Desc-&#x8868;&#x540D;&#x79F0;&#xFF1B;" class="headerlink" title="Desc &#x8868;&#x540D;&#x79F0;&#xFF1B;"></a>Desc &#x8868;&#x540D;&#x79F0;&#xFF1B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、删除表"><span class="nav-number">3.3.</span> <span class="nav-text"><a href="#3&#x3001;&#x5220;&#x9664;&#x8868;" class="headerlink" title="3&#x3001;&#x5220;&#x9664;&#x8868;"></a>3&#x3001;&#x5220;&#x9664;&#x8868;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Drop-table-要删除的表名称"><span class="nav-number">3.3.1.</span> <span class="nav-text"><a href="#Drop-table-&#x8981;&#x5220;&#x9664;&#x7684;&#x8868;&#x540D;&#x79F0;" class="headerlink" title="Drop table &#x8981;&#x5220;&#x9664;&#x7684;&#x8868;&#x540D;&#x79F0;;"></a>Drop table &#x8981;&#x5220;&#x9664;&#x7684;&#x8868;&#x540D;&#x79F0;;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、查看当前数据库所有表"><span class="nav-number">3.4.</span> <span class="nav-text"><a href="#4&#x3001;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x6240;&#x6709;&#x8868;" class="headerlink" title="4&#x3001;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x6240;&#x6709;&#x8868;"></a>4&#x3001;&#x67E5;&#x770B;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x6240;&#x6709;&#x8868;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Show-tables；"><span class="nav-number">3.4.1.</span> <span class="nav-text"><a href="#Show-tables&#xFF1B;" class="headerlink" title="Show tables&#xFF1B;"></a>Show tables&#xFF1B;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、MySQL常用的数据类型"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x4E09;&#x3001;MySQL&#x5E38;&#x7528;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="&#x4E09;&#x3001;MySQL&#x5E38;&#x7528;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>&#x4E09;&#x3001;MySQL&#x5E38;&#x7528;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、字符串型"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#1&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x578B;" class="headerlink" title="1&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x578B;"></a>1&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x578B;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Varchar-如果输入的字段内容没有达到声明长度的上限这个时候-只占用当前字符串长度所占的长度"><span class="nav-number">4.1.1.</span> <span class="nav-text"><a href="#Varchar-&#x5982;&#x679C;&#x8F93;&#x5165;&#x7684;&#x5B57;&#x6BB5;&#x5185;&#x5BB9;&#x6CA1;&#x6709;&#x8FBE;&#x5230;&#x58F0;&#x660E;&#x957F;&#x5EA6;&#x7684;&#x4E0A;&#x9650;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;-&#x53EA;&#x5360;&#x7528;&#x5F53;&#x524D;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x6240;&#x5360;&#x7684;&#x957F;&#x5EA6;" class="headerlink" title="-Varchar  &#x5982;&#x679C;&#x8F93;&#x5165;&#x7684;&#x5B57;&#x6BB5;&#x5185;&#x5BB9;&#x6CA1;&#x6709;&#x8FBE;&#x5230;&#x58F0;&#x660E;&#x957F;&#x5EA6;&#x7684;&#x4E0A;&#x9650;&#x8FD9;&#x4E2A;&#x65F6;&#x5019; &#x53EA;&#x5360;&#x7528;&#x5F53;&#x524D;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x6240;&#x5360;&#x7684;&#x957F;&#x5EA6;"></a>-Varchar  &#x5982;&#x679C;&#x8F93;&#x5165;&#x7684;&#x5B57;&#x6BB5;&#x5185;&#x5BB9;&#x6CA1;&#x6709;&#x8FBE;&#x5230;&#x58F0;&#x660E;&#x957F;&#x5EA6;&#x7684;&#x4E0A;&#x9650;&#x8FD9;&#x4E2A;&#x65F6;&#x5019; &#x53EA;&#x5360;&#x7528;&#x5F53;&#x524D;&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;&#x6240;&#x5360;&#x7684;&#x957F;&#x5EA6;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#char-直接分配20个字节"><span class="nav-number">4.1.2.</span> <span class="nav-text"><a href="#char-&#x76F4;&#x63A5;&#x5206;&#x914D;20&#x4E2A;&#x5B57;&#x8282;" class="headerlink" title="-char        &#x76F4;&#x63A5;&#x5206;&#x914D;20&#x4E2A;&#x5B57;&#x8282;"></a>-char        &#x76F4;&#x63A5;&#x5206;&#x914D;20&#x4E2A;&#x5B57;&#x8282;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、大数据类型"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#2&#x3001;&#x5927;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="2&#x3001;&#x5927;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>2&#x3001;&#x5927;&#x6570;&#x636E;&#x7C7B;&#x578B;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Blob、-非文本类型比较长的数据"><span class="nav-number">4.2.1.</span> <span class="nav-text"><a href="#Blob&#x3001;-&#x975E;&#x6587;&#x672C;&#x7C7B;&#x578B;&#x6BD4;&#x8F83;&#x957F;&#x7684;&#x6570;&#x636E;" class="headerlink" title="-Blob&#x3001;   &#x975E;&#x6587;&#x672C;&#x7C7B;&#x578B;&#x6BD4;&#x8F83;&#x957F;&#x7684;&#x6570;&#x636E;"></a>-Blob&#x3001;   &#x975E;&#x6587;&#x672C;&#x7C7B;&#x578B;&#x6BD4;&#x8F83;&#x957F;&#x7684;&#x6570;&#x636E;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-比较长的文本"><span class="nav-number">4.2.2.</span> <span class="nav-text"><a href="#Text-&#x6BD4;&#x8F83;&#x957F;&#x7684;&#x6587;&#x672C;" class="headerlink" title="Text         &#x6BD4;&#x8F83;&#x957F;&#x7684;&#x6587;&#x672C;"></a>Text         &#x6BD4;&#x8F83;&#x957F;&#x7684;&#x6587;&#x672C;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、数值型"><span class="nav-number">4.3.</span> <span class="nav-text"><a href="#3&#x3001;&#x6570;&#x503C;&#x578B;" class="headerlink" title="3&#x3001;&#x6570;&#x503C;&#x578B;"></a>3&#x3001;&#x6570;&#x503C;&#x578B;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、逻辑性"><span class="nav-number">4.4.</span> <span class="nav-text"><a href="#4&#x3001;&#x903B;&#x8F91;&#x6027;" class="headerlink" title="4&#x3001;&#x903B;&#x8F91;&#x6027;"></a>4&#x3001;&#x903B;&#x8F91;&#x6027;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bit、boolean"><span class="nav-number">4.4.1.</span> <span class="nav-text"><a href="#Bit&#x3001;boolean" class="headerlink" title="-Bit&#x3001;boolean"></a>-Bit&#x3001;boolean</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、日期型"><span class="nav-number">4.5.</span> <span class="nav-text"><a href="#5&#x3001;&#x65E5;&#x671F;&#x578B;" class="headerlink" title="5&#x3001;&#x65E5;&#x671F;&#x578B;"></a>5&#x3001;&#x65E5;&#x671F;&#x578B;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、使用SQL操作数据库表记录"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x56DB;&#x3001;&#x4F7F;&#x7528;SQL&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x8868;&#x8BB0;&#x5F55;" class="headerlink" title="&#x56DB;&#x3001;&#x4F7F;&#x7528;SQL&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x8868;&#x8BB0;&#x5F55;"></a>&#x56DB;&#x3001;&#x4F7F;&#x7528;SQL&#x64CD;&#x4F5C;&#x6570;&#x636E;&#x5E93;&#x8868;&#x8BB0;&#x5F55;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、插入记录"><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#1&#x3001;&#x63D2;&#x5165;&#x8BB0;&#x5F55;" class="headerlink" title="1&#x3001;&#x63D2;&#x5165;&#x8BB0;&#x5F55;"></a>1&#x3001;&#x63D2;&#x5165;&#x8BB0;&#x5F55;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#insert-into-表名-values（要添加的值）"><span class="nav-number">5.1.1.</span> <span class="nav-text"><a href="#insert-into-&#x8868;&#x540D;-values&#xFF08;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x503C;&#xFF09;" class="headerlink" title="-insert into &#x8868;&#x540D; values&#xFF08;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x503C;&#xFF09;;"></a>-insert into &#x8868;&#x540D; values&#xFF08;&#x8981;&#x6DFB;&#x52A0;&#x7684;&#x503C;&#xFF09;;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当添加的字段的数据类型是int类型，直接写值"><span class="nav-number">5.1.2.</span> <span class="nav-text"><a href="#&#x5F53;&#x6DFB;&#x52A0;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;int&#x7C7B;&#x578B;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x503C;" class="headerlink" title="&#x5F53;&#x6DFB;&#x52A0;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;int&#x7C7B;&#x578B;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x503C;"></a>&#x5F53;&#x6DFB;&#x52A0;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;int&#x7C7B;&#x578B;&#xFF0C;&#x76F4;&#x63A5;&#x5199;&#x503C;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当添加的字段的数据类型是varchar类型和日期类型，使用单括号把值包起来"><span class="nav-number">5.1.3.</span> <span class="nav-text"><a href="#&#x5F53;&#x6DFB;&#x52A0;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;varchar&#x7C7B;&#x578B;&#x548C;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x7528;&#x5355;&#x62EC;&#x53F7;&#x628A;&#x503C;&#x5305;&#x8D77;&#x6765;" class="headerlink" title="&#x5F53;&#x6DFB;&#x52A0;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;varchar&#x7C7B;&#x578B;&#x548C;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x7528;&#x5355;&#x62EC;&#x53F7;&#x628A;&#x503C;&#x5305;&#x8D77;&#x6765;"></a>&#x5F53;&#x6DFB;&#x52A0;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;varchar&#x7C7B;&#x578B;&#x548C;&#x65E5;&#x671F;&#x7C7B;&#x578B;&#xFF0C;&#x4F7F;&#x7528;&#x5355;&#x62EC;&#x53F7;&#x628A;&#x503C;&#x5305;&#x8D77;&#x6765;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、修改记录"><span class="nav-number">5.2.</span> <span class="nav-text"><a href="#2&#x3001;&#x4FEE;&#x6539;&#x8BB0;&#x5F55;" class="headerlink" title="2&#x3001;&#x4FEE;&#x6539;&#x8BB0;&#x5F55;"></a>2&#x3001;&#x4FEE;&#x6539;&#x8BB0;&#x5F55;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Update-表名-set-字段名1-值1-，字段名2-值2-，where条件；"><span class="nav-number">5.2.1.</span> <span class="nav-text"><a href="#Update-&#x8868;&#x540D;-set-&#x5B57;&#x6BB5;&#x540D;1-&#x503C;1-&#xFF0C;&#x5B57;&#x6BB5;&#x540D;2-&#x503C;2-&#xFF0C;where&#x6761;&#x4EF6;&#xFF1B;" class="headerlink" title="Update &#x8868;&#x540D; set &#x5B57;&#x6BB5;&#x540D;1 = &#x503C;1 &#xFF0C;&#x5B57;&#x6BB5;&#x540D;2= &#x503C;2 &#xFF0C;where&#x6761;&#x4EF6;&#xFF1B;"></a>Update &#x8868;&#x540D; set &#x5B57;&#x6BB5;&#x540D;1 = &#x503C;1 &#xFF0C;&#x5B57;&#x6BB5;&#x540D;2= &#x503C;2 &#xFF0C;where&#x6761;&#x4EF6;&#xFF1B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、删除记录"><span class="nav-number">5.3.</span> <span class="nav-text"><a href="#3&#x3001;&#x5220;&#x9664;&#x8BB0;&#x5F55;" class="headerlink" title="3&#x3001;&#x5220;&#x9664;&#x8BB0;&#x5F55;"></a>3&#x3001;&#x5220;&#x9664;&#x8BB0;&#x5F55;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Delete-from-表名-where-条件；"><span class="nav-number">5.3.1.</span> <span class="nav-text"><a href="#Delete-from-&#x8868;&#x540D;-where-&#x6761;&#x4EF6;&#xFF1B;" class="headerlink" title="Delete from &#x8868;&#x540D; where &#x6761;&#x4EF6;&#xFF1B;"></a>Delete from &#x8868;&#x540D; where &#x6761;&#x4EF6;&#xFF1B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、查询记录"><span class="nav-number">5.4.</span> <span class="nav-text"><a href="#4&#x3001;&#x67E5;&#x8BE2;&#x8BB0;&#x5F55;" class="headerlink" title="4&#x3001;&#x67E5;&#x8BE2;&#x8BB0;&#x5F55;"></a>4&#x3001;&#x67E5;&#x8BE2;&#x8BB0;&#x5F55;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Select-字段名（-）as-别名-from-表名-where-条件；"><span class="nav-number">5.4.1.</span> <span class="nav-text"><a href="#Select-&#x5B57;&#x6BB5;&#x540D;&#xFF08;-&#xFF09;as-&#x522B;&#x540D;-from-&#x8868;&#x540D;-where-&#x6761;&#x4EF6;&#xFF1B;" class="headerlink" title="Select &#x5B57;&#x6BB5;&#x540D;&#xFF08;*&#xFF09;as &#x522B;&#x540D; from &#x8868;&#x540D; where &#x6761;&#x4EF6;&#xFF1B;"></a>Select &#x5B57;&#x6BB5;&#x540D;&#xFF08;*&#xFF09;as &#x522B;&#x540D; from &#x8868;&#x540D; where &#x6761;&#x4EF6;&#xFF1B;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、去除表中重复记录"><span class="nav-number">5.5.</span> <span class="nav-text"><a href="#5&#x3001;&#x53BB;&#x9664;&#x8868;&#x4E2D;&#x91CD;&#x590D;&#x8BB0;&#x5F55;" class="headerlink" title="5&#x3001;&#x53BB;&#x9664;&#x8868;&#x4E2D;&#x91CD;&#x590D;&#x8BB0;&#x5F55;"></a>5&#x3001;&#x53BB;&#x9664;&#x8868;&#x4E2D;&#x91CD;&#x590D;&#x8BB0;&#x5F55;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Select-distinct-from-表名"><span class="nav-number">5.5.1.</span> <span class="nav-text"><a href="#Select-distinct-from-&#x8868;&#x540D;" class="headerlink" title="Select distinct * from &#x8868;&#x540D;"></a>Select distinct * from &#x8868;&#x540D;</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+    <!--添加音乐-->
+    <div id="music163player">
+          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=34229976&auto=0&height=66"></iframe>
+          </iframe>
+      </div>
+
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-battery-three-quarters" aria-hidden="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LanQinHui</span>
+</div>
+
+
+<!--
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+-->
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cyt66eaWe';
+      var conf = 'f4ba04d45ba4c9c0cb8a03cc00c2f126';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("2XPzqkLNPidmACGrFk7GNxA0-gzGzoHsz", "bYP8YtXKqQpgXXVYekggg7iU");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<!>
+<!--动态背景-->
+<script src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<!--背景颜色渐变-->
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+
+</body>
+</html>
