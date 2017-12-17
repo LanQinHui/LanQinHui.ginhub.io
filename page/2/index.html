@@ -91,6 +91,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="LanQinHui" type="application/atom+xml" />
+
 
 
 
@@ -132,7 +134,7 @@
       apiKey: '5db86ca1faf1afc1f4aefb590851d88a',
       indexName: 'LanQinHui_Blog',
       hits: {"per_page":10},
-      labels: {"input_placeholder":"查找你的文章吧~","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      labels: {"input_placeholder":"搜索...","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
@@ -144,6 +146,17 @@
 
 
 
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
   <title>LanQinHui</title>
   
@@ -288,16 +301,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-search">
-          <a href="/search" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
-            
-            Suche
-          </a>
-        </li>
-      
 
       
         <li class="menu-item menu-item-search">
@@ -307,7 +310,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            Suche
+            搜索
           </a>
         </li>
       
@@ -429,19 +432,6 @@
 
           
           
-             <span id="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" class="leancloud_visitors" data-flag-title="android imageButton 点击按钮前中后，按钮颜色的变化">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count">
-                 </span>
-                 <span>℃</span>
-             </span>
-          
 
           
 
@@ -456,7 +446,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  325
+                  325 字
                 </span>
               
 
@@ -472,7 +462,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  1 分钟
                 </span>
               
             </div>
@@ -613,19 +603,6 @@
 
           
           
-             <span id="/2017/08/06/GOUT项目笔记/" class="leancloud_visitors" data-flag-title="GOUT项目">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count">
-                 </span>
-                 <span>℃</span>
-             </span>
-          
 
           
 
@@ -640,7 +617,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  297
+                  297 字
                 </span>
               
 
@@ -656,7 +633,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  1 分钟
                 </span>
               
             </div>
@@ -799,19 +776,6 @@
 
           
           
-             <span id="/2017/07/06/eclipse怎么关联mysql驱动的源码/" class="leancloud_visitors" data-flag-title="Hexo的一些配置">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count">
-                 </span>
-                 <span>℃</span>
-             </span>
-          
 
           
 
@@ -826,7 +790,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  239
+                  239 字
                 </span>
               
 
@@ -842,7 +806,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  1 分钟
                 </span>
               
             </div>
@@ -983,19 +947,6 @@
 
           
           
-             <span id="/2017/07/06/hexo的一些配置/" class="leancloud_visitors" data-flag-title="Hexo的一些配置">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count">
-                 </span>
-                 <span>℃</span>
-             </span>
-          
 
           
 
@@ -1010,7 +961,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  239
+                  239 字
                 </span>
               
 
@@ -1026,7 +977,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  1
+                  1 分钟
                 </span>
               
             </div>
@@ -1167,19 +1118,6 @@
 
           
           
-             <span id="/2017/07/05/Android： EditText设置属性和设置输入规则/" class="leancloud_visitors" data-flag-title="Android中EditText设置属性和设置输入规则">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度 </span>
-               
-                 <span class="leancloud-visitors-count">
-                 </span>
-                 <span>℃</span>
-             </span>
-          
 
           
 
@@ -1194,7 +1132,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  964
+                  964 字
                 </span>
               
 
@@ -1210,7 +1148,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  4
+                  4 分钟
                 </span>
               
             </div>
@@ -1350,6 +1288,13 @@
         </nav>
 
         
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
 
         <div class="links-of-author motion-element">
           
@@ -1467,6 +1412,26 @@
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人数
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
         
       </div>
@@ -1610,113 +1575,6 @@
 
 
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("2XPzqkLNPidmACGrFk7GNxA0-gzGzoHsz", "bYP8YtXKqQpgXXVYekggg7iU");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
   
 
