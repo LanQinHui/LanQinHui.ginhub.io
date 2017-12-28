@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fly-lqhwjn.com/"/>
-  <updated>2017-12-15T02:29:42.149Z</updated>
+  <updated>2017-12-28T12:52:38.282Z</updated>
   <id>http://www.fly-lqhwjn.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mecanim动画系统</title>
+    <link href="http://www.fly-lqhwjn.com/2017/12/28/Mecanim%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://www.fly-lqhwjn.com/2017/12/28/Mecanim动画系统/</id>
+    <published>2017-12-28T12:51:21.000Z</published>
+    <updated>2017-12-28T12:52:38.282Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、相关术语"><a href="#一、相关术语" class="headerlink" title="一、相关术语"></a>一、相关术语</h3><h4 id="Animation-Clip-、动画片段、-Body-Mask-、身体遮罩、Avaytar-骨骼重定向、识别角色动画，应用-…-T-pose-T字的"><a href="#Animation-Clip-、动画片段、-Body-Mask-、身体遮罩、Avaytar-骨骼重定向、识别角色动画，应用-…-T-pose-T字的" class="headerlink" title="Animation Clip 、动画片段、 Body Mask  、身体遮罩、Avaytar 骨骼重定向、识别角色动画，应用 …. T-pose  T字的"></a>Animation Clip 、动画片段、 Body Mask  、身体遮罩、Avaytar 骨骼重定向、识别角色动画，应用 …. T-pose  T字的</h4><h3 id="二、自动角色系统或角色产生软件"><a href="#二、自动角色系统或角色产生软件" class="headerlink" title="二、自动角色系统或角色产生软件"></a>二、自动角色系统或角色产生软件</h3><h4 id="Poser、Makehuman、Mixamo"><a href="#Poser、Makehuman、Mixamo" class="headerlink" title="Poser、Makehuman、Mixamo"></a>Poser、Makehuman、Mixamo</h4><a id="more"></a><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-001-unity.png" alt="图片"></p><h4 id="1、相应的骨骼映射到相应的位置当中"><a href="#1、相应的骨骼映射到相应的位置当中" class="headerlink" title="1、相应的骨骼映射到相应的位置当中"></a>1、相应的骨骼映射到相应的位置当中</h4><h4 id="2、使角色位于T-pose姿势"><a href="#2、使角色位于T-pose姿势" class="headerlink" title="2、使角色位于T-pose姿势"></a>2、使角色位于T-pose姿势</h4><h3 id="三、身体遮罩的作用："><a href="#三、身体遮罩的作用：" class="headerlink" title="三、身体遮罩的作用："></a>三、身体遮罩的作用：</h3><h4 id="1、打开身体遮罩-人物角色-gt-Animation-gt-Mask"><a href="#1、打开身体遮罩-人物角色-gt-Animation-gt-Mask" class="headerlink" title="1、打开身体遮罩 人物角色-&gt;Animation-&gt;Mask"></a>1、打开身体遮罩 人物角色-&gt;Animation-&gt;Mask</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-002-unity.png" alt="图片"><br><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-003-unity.png" alt="图片"></p><h4 id="减少角色的动画量，减少内存和cpu。美工做好了的，不需要调节。角色经过Retargeting原理，角色有个骨骼。Root-Motion控制角色在场景中的运动位置的改变。Root-Motion的改变应用于场景中位置的改变。Root-Motion为0，原地踏步。"><a href="#减少角色的动画量，减少内存和cpu。美工做好了的，不需要调节。角色经过Retargeting原理，角色有个骨骼。Root-Motion控制角色在场景中的运动位置的改变。Root-Motion的改变应用于场景中位置的改变。Root-Motion为0，原地踏步。" class="headerlink" title="减少角色的动画量，减少内存和cpu。美工做好了的，不需要调节。角色经过Retargeting原理，角色有个骨骼。Root Motion控制角色在场景中的运动位置的改变。Root Motion的改变应用于场景中位置的改变。Root Motion为0，原地踏步。"></a>减少角色的动画量，减少内存和cpu。美工做好了的，不需要调节。角色经过Retargeting原理，角色有个骨骼。Root Motion控制角色在场景中的运动位置的改变。Root Motion的改变应用于场景中位置的改变。Root Motion为0，原地踏步。</h4><h3 id="四、贴图和材质的丢失解决办法："><a href="#四、贴图和材质的丢失解决办法：" class="headerlink" title="四、贴图和材质的丢失解决办法："></a>四、贴图和材质的丢失解决办法：</h3><h4 id="1、找到Mesh-Renderer，里面的Albedo是材质，Normal-Map是法线贴图，"><a href="#1、找到Mesh-Renderer，里面的Albedo是材质，Normal-Map是法线贴图，" class="headerlink" title="1、找到Mesh Renderer，里面的Albedo是材质，Normal Map是法线贴图，"></a>1、找到Mesh Renderer，里面的Albedo是材质，Normal Map是法线贴图，</h4><h5 id="（1）、找贴图：找到Skinned-Mesh-Renderer，这个控制渲染。"><a href="#（1）、找贴图：找到Skinned-Mesh-Renderer，这个控制渲染。" class="headerlink" title="（1）、找贴图：找到Skinned Mesh Renderer，这个控制渲染。"></a>（1）、找贴图：找到Skinned Mesh Renderer，这个控制渲染。</h5><h5 id="（2）、在Hierarachy里搜索t：MeshRenderer"><a href="#（2）、在Hierarachy里搜索t：MeshRenderer" class="headerlink" title="（2）、在Hierarachy里搜索t：MeshRenderer"></a>（2）、在Hierarachy里搜索t：MeshRenderer</h5><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-004-unity.png" alt="图片"></p><h5 id="（3）、搜索-t-Skinnedmeshrenderer"><a href="#（3）、搜索-t-Skinnedmeshrenderer" class="headerlink" title="（3）、搜索 t:Skinnedmeshrenderer"></a>（3）、搜索 t:Skinnedmeshrenderer</h5><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-005-unity.png" alt="图片"></p><h4 id="材质和贴图的关系："><a href="#材质和贴图的关系：" class="headerlink" title="材质和贴图的关系："></a>材质和贴图的关系：</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-006-unity.png" alt="图片"><br><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-007-unity.png" alt="图片"></p><h4 id="（4）、角色模型的的初始大小怎么比较，在场景里新建一个Cube，比较大小，Cube的大小为111平方米。"><a href="#（4）、角色模型的的初始大小怎么比较，在场景里新建一个Cube，比较大小，Cube的大小为111平方米。" class="headerlink" title="（4）、角色模型的的初始大小怎么比较，在场景里新建一个Cube，比较大小，Cube的大小为111平方米。"></a>（4）、角色模型的的初始大小怎么比较，在场景里新建一个Cube，比较大小，Cube的大小为1<em>1</em>1平方米。</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-008-unity.png" alt="图片"></p><h3 id="五、人物动画的分割："><a href="#五、人物动画的分割：" class="headerlink" title="五、人物动画的分割："></a>五、人物动画的分割：</h3><h4 id="1、Legacy：旧版本的动画不支持状态机，使用状态机，人物动画无法播放，控制会提示错误信息。需要使用Animator组件来播放动画。"><a href="#1、Legacy：旧版本的动画不支持状态机，使用状态机，人物动画无法播放，控制会提示错误信息。需要使用Animator组件来播放动画。" class="headerlink" title="1、Legacy：旧版本的动画不支持状态机，使用状态机，人物动画无法播放，控制会提示错误信息。需要使用Animator组件来播放动画。"></a>1、Legacy：旧版本的动画不支持状态机，使用状态机，人物动画无法播放，控制会提示错误信息。需要使用Animator组件来播放动画。</h4><h4 id="2、Generic：需要Animator组件播放动画，不能使用动画状态机来播放。"><a href="#2、Generic：需要Animator组件播放动画，不能使用动画状态机来播放。" class="headerlink" title="2、Generic：需要Animator组件播放动画，不能使用动画状态机来播放。"></a>2、Generic：需要Animator组件播放动画，不能使用动画状态机来播放。</h4><h4 id="3、Humanoid：人物，使用动画状态机来进行动画的的控制。如果使用这个，动画都是通用的。可以给任意的人物使用。"><a href="#3、Humanoid：人物，使用动画状态机来进行动画的的控制。如果使用这个，动画都是通用的。可以给任意的人物使用。" class="headerlink" title="3、Humanoid：人物，使用动画状态机来进行动画的的控制。如果使用这个，动画都是通用的。可以给任意的人物使用。"></a>3、Humanoid：人物，使用动画状态机来进行动画的的控制。如果使用这个，动画都是通用的。可以给任意的人物使用。</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-009-unity.png" alt="图片"></p><h3 id="Generic和Humanoid的区别："><a href="#Generic和Humanoid的区别：" class="headerlink" title="Generic和Humanoid的区别："></a>Generic和Humanoid的区别：</h3><h4 id="1、动画的重定向"><a href="#1、动画的重定向" class="headerlink" title="1、动画的重定向"></a>1、动画的重定向</h4><h4 id="2、骨骼，Avatar"><a href="#2、骨骼，Avatar" class="headerlink" title="2、骨骼，Avatar"></a>2、骨骼，Avatar</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、相关术语&quot;&gt;&lt;a href=&quot;#一、相关术语&quot; class=&quot;headerlink&quot; title=&quot;一、相关术语&quot;&gt;&lt;/a&gt;一、相关术语&lt;/h3&gt;&lt;h4 id=&quot;Animation-Clip-、动画片段、-Body-Mask-、身体遮罩、Avaytar-骨骼重定向、识别角色动画，应用-…-T-pose-T字的&quot;&gt;&lt;a href=&quot;#Animation-Clip-、动画片段、-Body-Mask-、身体遮罩、Avaytar-骨骼重定向、识别角色动画，应用-…-T-pose-T字的&quot; class=&quot;headerlink&quot; title=&quot;Animation Clip 、动画片段、 Body Mask  、身体遮罩、Avaytar 骨骼重定向、识别角色动画，应用 …. T-pose  T字的&quot;&gt;&lt;/a&gt;Animation Clip 、动画片段、 Body Mask  、身体遮罩、Avaytar 骨骼重定向、识别角色动画，应用 …. T-pose  T字的&lt;/h4&gt;&lt;h3 id=&quot;二、自动角色系统或角色产生软件&quot;&gt;&lt;a href=&quot;#二、自动角色系统或角色产生软件&quot; class=&quot;headerlink&quot; title=&quot;二、自动角色系统或角色产生软件&quot;&gt;&lt;/a&gt;二、自动角色系统或角色产生软件&lt;/h3&gt;&lt;h4 id=&quot;Poser、Makehuman、Mixamo&quot;&gt;&lt;a href=&quot;#Poser、Makehuman、Mixamo&quot; class=&quot;headerlink&quot; title=&quot;Poser、Makehuman、Mixamo&quot;&gt;&lt;/a&gt;Poser、Makehuman、Mixamo&lt;/h4&gt;
+    
+    </summary>
+    
+    
+      <category term="Uinty" scheme="http://www.fly-lqhwjn.com/tags/Uinty/"/>
+    
+      <category term="Mecanim动画系统" scheme="http://www.fly-lqhwjn.com/tags/Mecanim%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

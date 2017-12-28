@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mecanim动画系统]]></title>
+    <url>%2F2017%2F12%2F28%2FMecanim%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%2F</url>
+    <content type="text"><![CDATA[一、相关术语Animation Clip 、动画片段、 Body Mask 、身体遮罩、Avaytar 骨骼重定向、识别角色动画，应用 …. T-pose T字的二、自动角色系统或角色产生软件Poser、Makehuman、Mixamo 1、相应的骨骼映射到相应的位置当中2、使角色位于T-pose姿势三、身体遮罩的作用：1、打开身体遮罩 人物角色-&gt;Animation-&gt;Mask 减少角色的动画量，减少内存和cpu。美工做好了的，不需要调节。角色经过Retargeting原理，角色有个骨骼。Root Motion控制角色在场景中的运动位置的改变。Root Motion的改变应用于场景中位置的改变。Root Motion为0，原地踏步。四、贴图和材质的丢失解决办法：1、找到Mesh Renderer，里面的Albedo是材质，Normal Map是法线贴图，（1）、找贴图：找到Skinned Mesh Renderer，这个控制渲染。（2）、在Hierarachy里搜索t：MeshRenderer （3）、搜索 t:Skinnedmeshrenderer 材质和贴图的关系： （4）、角色模型的的初始大小怎么比较，在场景里新建一个Cube，比较大小，Cube的大小为111平方米。 五、人物动画的分割：1、Legacy：旧版本的动画不支持状态机，使用状态机，人物动画无法播放，控制会提示错误信息。需要使用Animator组件来播放动画。2、Generic：需要Animator组件播放动画，不能使用动画状态机来播放。3、Humanoid：人物，使用动画状态机来进行动画的的控制。如果使用这个，动画都是通用的。可以给任意的人物使用。 Generic和Humanoid的区别：1、动画的重定向2、骨骼，Avatar]]></content>
+      <tags>
+        <tag>Uinty</tag>
+        <tag>Mecanim动画系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2017%2F12%2F17%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
