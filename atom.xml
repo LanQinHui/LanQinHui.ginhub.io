@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.fly-lqhwjn.com/"/>
-  <updated>2017-12-28T12:52:38.282Z</updated>
+  <updated>2017-12-28T13:18:38.071Z</updated>
   <id>http://www.fly-lqhwjn.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iTween动画系统</title>
+    <link href="http://www.fly-lqhwjn.com/2017/12/28/iTween%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://www.fly-lqhwjn.com/2017/12/28/iTween动画系统/</id>
+    <published>2017-12-28T12:56:46.000Z</published>
+    <updated>2017-12-28T13:18:38.071Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一、iTween和DoITween的区别：DoItween的效率更高"><a href="#一、iTween和DoITween的区别：DoItween的效率更高" class="headerlink" title="一、iTween和DoITween的区别：DoItween的效率更高"></a>一、iTween和DoITween的区别：DoItween的效率更高</h3><h4 id="1、position和localposition，前者是世界坐标，后者是局部坐标、DOTween-To方法的参数"><a href="#1、position和localposition，前者是世界坐标，后者是局部坐标、DOTween-To方法的参数" class="headerlink" title="1、position和localposition，前者是世界坐标，后者是局部坐标、DOTween.To方法的参数"></a>1、position和localposition，前者是世界坐标，后者是局部坐标、DOTween.To方法的参数</h4><a id="more"></a><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-0010-unity.png" alt="图片"></p><h3 id="二、DOTween"><a href="#二、DOTween" class="headerlink" title="二、DOTween"></a>二、DOTween</h3><h3 id="1、DOTween-To方法的参数"><a href="#1、DOTween-To方法的参数" class="headerlink" title="1、DOTween.To方法的参数"></a>1、DOTween.To方法的参数</h3><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-0011-unity.png" alt="图片"></p><h4 id="2、RectTransform-和Transform-的区别：RectTransform-继承自Transform，是-UGUI-专用的类，也就是-Unity-自带的-UI-的位置、大小、旋转。常用的有两个属性。anchoredPosition-是位置，sizeDelta-是大小。也可以直接修改-transform，RectTransform也会跟着改变。其默认-Anchor-方式的-0-0-点是屏幕中心。具体的你可以问我。Transform-是场景中物体的旋转，大小、位置信息等东西"><a href="#2、RectTransform-和Transform-的区别：RectTransform-继承自Transform，是-UGUI-专用的类，也就是-Unity-自带的-UI-的位置、大小、旋转。常用的有两个属性。anchoredPosition-是位置，sizeDelta-是大小。也可以直接修改-transform，RectTransform也会跟着改变。其默认-Anchor-方式的-0-0-点是屏幕中心。具体的你可以问我。Transform-是场景中物体的旋转，大小、位置信息等东西" class="headerlink" title="2、RectTransform 和Transform 的区别：RectTransform 继承自Transform，是 UGUI 专用的类，也就是 Unity 自带的 UI 的位置、大小、旋转。常用的有两个属性。anchoredPosition 是位置，sizeDelta 是大小。也可以直接修改 transform，RectTransform也会跟着改变。其默认 Anchor 方式的 0,0 点是屏幕中心。具体的你可以问我。Transform 是场景中物体的旋转，大小、位置信息等东西"></a>2、RectTransform 和Transform 的区别：RectTransform 继承自Transform，是 UGUI 专用的类，也就是 Unity 自带的 UI 的位置、大小、旋转。常用的有两个属性。anchoredPosition 是位置，sizeDelta 是大小。也可以直接修改 transform，RectTransform也会跟着改变。其默认 Anchor 方式的 0,0 点是屏幕中心。具体的你可以问我。Transform 是场景中物体的旋转，大小、位置信息等东西</h4><h3 id="、"><a href="#、" class="headerlink" title="、"></a>、</h3><h4 id="3、DOMove方法，世界坐标的移动，DOLocalMove方法，局部坐标的移动让一个Panel移动，其参数都是一样的（位置，时间）。"><a href="#3、DOMove方法，世界坐标的移动，DOLocalMove方法，局部坐标的移动让一个Panel移动，其参数都是一样的（位置，时间）。" class="headerlink" title="3、DOMove方法，世界坐标的移动，DOLocalMove方法，局部坐标的移动让一个Panel移动，其参数都是一样的（位置，时间）。"></a>3、DOMove方法，世界坐标的移动，DOLocalMove方法，局部坐标的移动让一个Panel移动，其参数都是一样的（位置，时间）。</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-0012-unity.png" alt="图片"></p><h4 id="4、每次调用Do类型的方法时，都会创建一个tweener对象-这个对象是dotween来管理的。"><a href="#4、每次调用Do类型的方法时，都会创建一个tweener对象-这个对象是dotween来管理的。" class="headerlink" title="4、每次调用Do类型的方法时，都会创建一个tweener对象,这个对象是dotween来管理的。"></a>4、每次调用Do类型的方法时，都会创建一个tweener对象,这个对象是dotween来管理的。</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-0013-unity.png" alt="图片"></p><h4 id="5、From里面的参数，默认是false，表示计算的方式为世界坐标，true是局部坐标。"><a href="#5、From里面的参数，默认是false，表示计算的方式为世界坐标，true是局部坐标。" class="headerlink" title="5、From里面的参数，默认是false，表示计算的方式为世界坐标，true是局部坐标。"></a>5、From里面的参数，默认是false，表示计算的方式为世界坐标，true是局部坐标。</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-0014-unity.png" alt="图片"></p><h4 id="6、tweener对象的方法的食欲使用。"><a href="#6、tweener对象的方法的食欲使用。" class="headerlink" title="6、tweener对象的方法的食欲使用。"></a>6、tweener对象的方法的食欲使用。</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-0015-unity.png" alt="图片"></p><h4 id="7、动画的生命周期和生命函数"><a href="#7、动画的生命周期和生命函数" class="headerlink" title="7、动画的生命周期和生命函数"></a>7、动画的生命周期和生命函数</h4><h5 id="DOText官方解释："><a href="#DOText官方解释：" class="headerlink" title="DOText官方解释："></a>DOText官方解释：</h5><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-0016-unity.png" alt="图片"></p><h4 id="第一个参数"><a href="#第一个参数" class="headerlink" title="第一个参数"></a>第一个参数</h4><p>string to：为所要显示的文本信息。</p><h4 id="第二个参数"><a href="#第二个参数" class="headerlink" title="第二个参数"></a>第二个参数</h4><p>float duration ：显示全部文本所需要的时间。</p><h4 id="第三个参数"><a href="#第三个参数" class="headerlink" title="第三个参数"></a>第三个参数</h4><p>bool richTextEnabled = true ：是否开启抢占文字显示的动画。</p><h4 id="第四个参数"><a href="#第四个参数" class="headerlink" title="第四个参数"></a>第四个参数</h4><p>ScrambleMode.None :为不开启、ScrambleMode.All：全部开启、ScrambleMode.Uppercase:大写字母、ScrambleMode.Lowercase：小写字母、ScrambleMode.Numerals：数字</p><h4 id="第五个参数"><a href="#第五个参数" class="headerlink" title="第五个参数"></a>第五个参数</h4><p>自定义需要的显示的字符。</p><h4 id="9、文本的颜色渐变和逐渐显示"><a href="#9、文本的颜色渐变和逐渐显示" class="headerlink" title="9、文本的颜色渐变和逐渐显示"></a>9、文本的颜色渐变和逐渐显示</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-0017-unity.png" alt="图片">)</p><h2 id="DOTween的可视化操作："><a href="#DOTween的可视化操作：" class="headerlink" title="DOTween的可视化操作："></a>DOTween的可视化操作：</h2><h4 id="1、新建一个Image，组件添加DoTween-Animation"><a href="#1、新建一个Image，组件添加DoTween-Animation" class="headerlink" title="1、新建一个Image，组件添加DoTween Animation"></a>1、新建一个Image，组件添加DoTween Animation</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-0018-unity.png" alt="图片"></p><h4 id="10、路径编辑器"><a href="#10、路径编辑器" class="headerlink" title="10、路径编辑器"></a>10、路径编辑器</h4><h4 id="1、新建一个Cube，在组件里添加DoTween-Path"><a href="#1、新建一个Cube，在组件里添加DoTween-Path" class="headerlink" title="1、新建一个Cube，在组件里添加DoTween Path"></a>1、新建一个Cube，在组件里添加DoTween Path</h4><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-12-28-0019-unity.png" alt="图片"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一、iTween和DoITween的区别：DoItween的效率更高&quot;&gt;&lt;a href=&quot;#一、iTween和DoITween的区别：DoItween的效率更高&quot; class=&quot;headerlink&quot; title=&quot;一、iTween和DoITween的区别：DoItween的效率更高&quot;&gt;&lt;/a&gt;一、iTween和DoITween的区别：DoItween的效率更高&lt;/h3&gt;&lt;h4 id=&quot;1、position和localposition，前者是世界坐标，后者是局部坐标、DOTween-To方法的参数&quot;&gt;&lt;a href=&quot;#1、position和localposition，前者是世界坐标，后者是局部坐标、DOTween-To方法的参数&quot; class=&quot;headerlink&quot; title=&quot;1、position和localposition，前者是世界坐标，后者是局部坐标、DOTween.To方法的参数&quot;&gt;&lt;/a&gt;1、position和localposition，前者是世界坐标，后者是局部坐标、DOTween.To方法的参数&lt;/h4&gt;
+    
+    </summary>
+    
+    
+      <category term="Uinty" scheme="http://www.fly-lqhwjn.com/tags/Uinty/"/>
+    
+      <category term="iTween动画动画系统" scheme="http://www.fly-lqhwjn.com/tags/iTween%E5%8A%A8%E7%94%BB%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>Mecanim动画系统</title>
@@ -185,8 +207,8 @@
   
   <entry>
     <title>Hexo的一些配置</title>
-    <link href="http://www.fly-lqhwjn.com/2017/07/06/eclipse%E6%80%8E%E4%B9%88%E5%85%B3%E8%81%94mysql%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%BA%90%E7%A0%81/"/>
-    <id>http://www.fly-lqhwjn.com/2017/07/06/eclipse怎么关联mysql驱动的源码/</id>
+    <link href="http://www.fly-lqhwjn.com/2017/07/06/hexo%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/"/>
+    <id>http://www.fly-lqhwjn.com/2017/07/06/hexo的一些配置/</id>
     <published>2017-07-06T15:45:32.000Z</published>
     <updated>2017-07-06T15:52:03.464Z</updated>
     
@@ -205,8 +227,8 @@
   
   <entry>
     <title>Hexo的一些配置</title>
-    <link href="http://www.fly-lqhwjn.com/2017/07/06/hexo%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE/"/>
-    <id>http://www.fly-lqhwjn.com/2017/07/06/hexo的一些配置/</id>
+    <link href="http://www.fly-lqhwjn.com/2017/07/06/eclipse%E6%80%8E%E4%B9%88%E5%85%B3%E8%81%94mysql%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%BA%90%E7%A0%81/"/>
+    <id>http://www.fly-lqhwjn.com/2017/07/06/eclipse怎么关联mysql驱动的源码/</id>
     <published>2017-07-06T15:45:32.000Z</published>
     <updated>2017-07-06T15:52:03.464Z</updated>
     

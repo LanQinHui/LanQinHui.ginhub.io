@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[iTween动画系统]]></title>
+    <url>%2F2017%2F12%2F28%2FiTween%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%2F</url>
+    <content type="text"><![CDATA[一、iTween和DoITween的区别：DoItween的效率更高1、position和localposition，前者是世界坐标，后者是局部坐标、DOTween.To方法的参数 二、DOTween1、DOTween.To方法的参数 2、RectTransform 和Transform 的区别：RectTransform 继承自Transform，是 UGUI 专用的类，也就是 Unity 自带的 UI 的位置、大小、旋转。常用的有两个属性。anchoredPosition 是位置，sizeDelta 是大小。也可以直接修改 transform，RectTransform也会跟着改变。其默认 Anchor 方式的 0,0 点是屏幕中心。具体的你可以问我。Transform 是场景中物体的旋转，大小、位置信息等东西、3、DOMove方法，世界坐标的移动，DOLocalMove方法，局部坐标的移动让一个Panel移动，其参数都是一样的（位置，时间）。 4、每次调用Do类型的方法时，都会创建一个tweener对象,这个对象是dotween来管理的。 5、From里面的参数，默认是false，表示计算的方式为世界坐标，true是局部坐标。 6、tweener对象的方法的食欲使用。 7、动画的生命周期和生命函数DOText官方解释： 第一个参数string to：为所要显示的文本信息。 第二个参数float duration ：显示全部文本所需要的时间。 第三个参数bool richTextEnabled = true ：是否开启抢占文字显示的动画。 第四个参数ScrambleMode.None :为不开启、ScrambleMode.All：全部开启、ScrambleMode.Uppercase:大写字母、ScrambleMode.Lowercase：小写字母、ScrambleMode.Numerals：数字 第五个参数自定义需要的显示的字符。 9、文本的颜色渐变和逐渐显示) DOTween的可视化操作：1、新建一个Image，组件添加DoTween Animation 10、路径编辑器1、新建一个Cube，在组件里添加DoTween Path]]></content>
+      <tags>
+        <tag>Uinty</tag>
+        <tag>iTween动画动画系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mecanim动画系统]]></title>
     <url>%2F2017%2F12%2F28%2FMecanim%E5%8A%A8%E7%94%BB%E7%B3%BB%E7%BB%9F%2F</url>
     <content type="text"><![CDATA[一、相关术语Animation Clip 、动画片段、 Body Mask 、身体遮罩、Avaytar 骨骼重定向、识别角色动画，应用 …. T-pose T字的二、自动角色系统或角色产生软件Poser、Makehuman、Mixamo 1、相应的骨骼映射到相应的位置当中2、使角色位于T-pose姿势三、身体遮罩的作用：1、打开身体遮罩 人物角色-&gt;Animation-&gt;Mask 减少角色的动画量，减少内存和cpu。美工做好了的，不需要调节。角色经过Retargeting原理，角色有个骨骼。Root Motion控制角色在场景中的运动位置的改变。Root Motion的改变应用于场景中位置的改变。Root Motion为0，原地踏步。四、贴图和材质的丢失解决办法：1、找到Mesh Renderer，里面的Albedo是材质，Normal Map是法线贴图，（1）、找贴图：找到Skinned Mesh Renderer，这个控制渲染。（2）、在Hierarachy里搜索t：MeshRenderer （3）、搜索 t:Skinnedmeshrenderer 材质和贴图的关系： （4）、角色模型的的初始大小怎么比较，在场景里新建一个Cube，比较大小，Cube的大小为111平方米。 五、人物动画的分割：1、Legacy：旧版本的动画不支持状态机，使用状态机，人物动画无法播放，控制会提示错误信息。需要使用Animator组件来播放动画。2、Generic：需要Animator组件播放动画，不能使用动画状态机来播放。3、Humanoid：人物，使用动画状态机来进行动画的的控制。如果使用这个，动画都是通用的。可以给任意的人物使用。 Generic和Humanoid的区别：1、动画的重定向2、骨骼，Avatar]]></content>
@@ -65,7 +74,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo的一些配置]]></title>
-    <url>%2F2017%2F07%2F06%2Feclipse%E6%80%8E%E4%B9%88%E5%85%B3%E8%81%94mysql%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%BA%90%E7%A0%81%2F</url>
+    <url>%2F2017%2F07%2F06%2Fhexo%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。 2、在主题下的 themes//_config.yml在menu这一项对应的链接名称下添加路径。 在主题的source和hexo下的source有什么区别？12在主题下，会离开主页面，在hexo下的话，还是主界面。404界面可以放在主题的source下。但是主题下的超链接 还是在主题下的themes/&lt;theme_name&gt;/_config.yml更改的。 3、使用标签来隐藏其下面的内容~4、标签使用123tags: - 标签1 - 标签2 5、每页显示多少篇文章，分页效果如何设置？类似于上图，每一页显示几篇文章，我们打开主目录下的_config.yml,找到下端代码的位置，修改per_page后面的参数就行，例如我的就是每页五篇文章123## Set per_page to 0 to disable paginationper_page: 5pagination_dir: page]]></content>
       <tags>
         <tag>Hexo</tag>
@@ -73,7 +82,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo的一些配置]]></title>
-    <url>%2F2017%2F07%2F06%2Fhexo%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE%2F</url>
+    <url>%2F2017%2F07%2F06%2Feclipse%E6%80%8E%E4%B9%88%E5%85%B3%E8%81%94mysql%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%BA%90%E7%A0%81%2F</url>
     <content type="text"><![CDATA[1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。 2、在主题下的 themes//_config.yml在menu这一项对应的链接名称下添加路径。 在主题的source和hexo下的source有什么区别？12在主题下，会离开主页面，在hexo下的话，还是主界面。404界面可以放在主题的source下。但是主题下的超链接 还是在主题下的themes/&lt;theme_name&gt;/_config.yml更改的。 3、使用标签来隐藏其下面的内容~4、标签使用123tags: - 标签1 - 标签2 5、每页显示多少篇文章，分页效果如何设置？类似于上图，每一页显示几篇文章，我们打开主目录下的_config.yml,找到下端代码的位置，修改per_page后面的参数就行，例如我的就是每页五篇文章123## Set per_page to 0 to disable paginationper_page: 5pagination_dir: page]]></content>
       <tags>
         <tag>Hexo</tag>
