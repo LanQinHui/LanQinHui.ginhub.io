@@ -69,7 +69,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo的一些配置]]></title>
-    <url>%2F2017%2F07%2F06%2Fhexo%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE%2F</url>
+    <url>%2F2017%2F07%2F06%2Feclipse%E6%80%8E%E4%B9%88%E5%85%B3%E8%81%94mysql%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%BA%90%E7%A0%81%2F</url>
     <content type="text"><![CDATA[1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。 2、在主题下的 themes//_config.yml在menu这一项对应的链接名称下添加路径。 在主题的source和hexo下的source有什么区别？12在主题下，会离开主页面，在hexo下的话，还是主界面。404界面可以放在主题的source下。但是主题下的超链接 还是在主题下的themes/&lt;theme_name&gt;/_config.yml更改的。 3、使用标签来隐藏其下面的内容~4、标签使用123tags: - 标签1 - 标签2 5、每页显示多少篇文章，分页效果如何设置？类似于上图，每一页显示几篇文章，我们打开主目录下的_config.yml,找到下端代码的位置，修改per_page后面的参数就行，例如我的就是每页五篇文章123## Set per_page to 0 to disable paginationper_page: 5pagination_dir: page]]></content>
       <tags>
         <tag>Hexo</tag>
@@ -77,7 +77,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo的一些配置]]></title>
-    <url>%2F2017%2F07%2F06%2Feclipse%E6%80%8E%E4%B9%88%E5%85%B3%E8%81%94mysql%E9%A9%B1%E5%8A%A8%E7%9A%84%E6%BA%90%E7%A0%81%2F</url>
+    <url>%2F2017%2F07%2F06%2Fhexo%E7%9A%84%E4%B8%80%E4%BA%9B%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。 2、在主题下的 themes//_config.yml在menu这一项对应的链接名称下添加路径。 在主题的source和hexo下的source有什么区别？12在主题下，会离开主页面，在hexo下的话，还是主界面。404界面可以放在主题的source下。但是主题下的超链接 还是在主题下的themes/&lt;theme_name&gt;/_config.yml更改的。 3、使用标签来隐藏其下面的内容~4、标签使用123tags: - 标签1 - 标签2 5、每页显示多少篇文章，分页效果如何设置？类似于上图，每一页显示几篇文章，我们打开主目录下的_config.yml,找到下端代码的位置，修改per_page后面的参数就行，例如我的就是每页五篇文章123## Set per_page to 0 to disable paginationper_page: 5pagination_dir: page]]></content>
       <tags>
         <tag>Hexo</tag>
