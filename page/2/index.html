@@ -372,177 +372,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.fly-lqhwjn.com/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LanQinHui">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/23704127?s=400&u=c75c4246802d5a205aabbeff5480f472b834aa3f&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LanQinHui">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" itemprop="url">android imageButton 点击按钮前中后，按钮颜色的变化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-10T11:57:40+08:00">
-                2017-08-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://www.fly-lqhwjn.com/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" class="cy_cmt_count" data-xid="2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  325 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-EditText输入限制规则"><a href="#1-EditText输入限制规则" class="headerlink" title="1.EditText输入限制规则"></a>1.EditText输入限制规则</h2><h3 id="我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res-drawable目录中建立这样一个XML文件："><a href="#我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res-drawable目录中建立这样一个XML文件：" class="headerlink" title="我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res/drawable目录中建立这样一个XML文件："></a>我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res/drawable目录中建立这样一个XML文件：</h3>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.fly-lqhwjn.com/2017/08/10/SharedPreferences详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -659,6 +488,177 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/08/10/SharedPreferences详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.fly-lqhwjn.com/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LanQinHui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/23704127?s=400&u=c75c4246802d5a205aabbeff5480f472b834aa3f&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LanQinHui">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" itemprop="url">android imageButton 点击按钮前中后，按钮颜色的变化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-10T11:57:40+08:00">
+                2017-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://www.fly-lqhwjn.com/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" class="cy_cmt_count" data-xid="2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  325 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-EditText输入限制规则"><a href="#1-EditText输入限制规则" class="headerlink" title="1.EditText输入限制规则"></a>1.EditText输入限制规则</h2><h3 id="我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res-drawable目录中建立这样一个XML文件："><a href="#我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res-drawable目录中建立这样一个XML文件：" class="headerlink" title="我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res/drawable目录中建立这样一个XML文件："></a>我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res/drawable目录中建立这样一个XML文件：</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/10/android imageButton 点击按钮前中后，按钮颜色的变化/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -887,177 +887,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.fly-lqhwjn.com/2017/07/06/eclipse怎么关联mysql驱动的源码/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LanQinHui">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/23704127?s=400&u=c75c4246802d5a205aabbeff5480f472b834aa3f&v=4">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LanQinHui">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/06/eclipse怎么关联mysql驱动的源码/" itemprop="url">Hexo的一些配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T23:45:32+08:00">
-                2017-07-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-comment-o"></i>
-              </span>
-              
-                <a href="/2017/07/06/eclipse怎么关联mysql驱动的源码/#SOHUCS" itemprop="discussionUrl">
-                  <span id="url::http://www.fly-lqhwjn.com/2017/07/06/eclipse怎么关联mysql驱动的源码/" class="cy_cmt_count" data-xid="2017/07/06/eclipse怎么关联mysql驱动的源码/" itemprop="commentsCount" ></span>
-                </a>
-              
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计</span>
-                
-                <span title="字数统计">
-                  239 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。"><a href="#1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。" class="headerlink" title="1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。"></a>1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。</h2><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-7-6-p01.png" alt="图片"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/06/eclipse怎么关联mysql驱动的源码/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.fly-lqhwjn.com/2017/07/06/hexo的一些配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1174,6 +1003,177 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/06/hexo的一些配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.fly-lqhwjn.com/2017/07/06/eclipse怎么关联mysql驱动的源码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LanQinHui">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/23704127?s=400&u=c75c4246802d5a205aabbeff5480f472b834aa3f&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LanQinHui">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/06/eclipse怎么关联mysql驱动的源码/" itemprop="url">Hexo的一些配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T23:45:32+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/07/06/eclipse怎么关联mysql驱动的源码/#SOHUCS" itemprop="discussionUrl">
+                  <span id="url::http://www.fly-lqhwjn.com/2017/07/06/eclipse怎么关联mysql驱动的源码/" class="cy_cmt_count" data-xid="2017/07/06/eclipse怎么关联mysql驱动的源码/" itemprop="commentsCount" ></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  239 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。"><a href="#1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。" class="headerlink" title="1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。"></a>1、在这里source新建两个链接的文件夹，把静态的页面放到这文件夹下。</h2><p><img src="http://osoeh8dr8.bkt.clouddn.com/2017-7-6-p01.png" alt="图片"><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/06/eclipse怎么关联mysql驱动的源码/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
