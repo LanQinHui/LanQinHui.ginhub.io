@@ -2092,7 +2092,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff09;
+  background: #8325dd;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2638,8 +2638,6 @@ img:hover {
   left: 0;
   z-index: 2080;
   background-color: rgba(0,0,0,0.3);
-}
-@media (max-width: 767px) {
 }
 .algolia-popup {
   overflow: hidden;
