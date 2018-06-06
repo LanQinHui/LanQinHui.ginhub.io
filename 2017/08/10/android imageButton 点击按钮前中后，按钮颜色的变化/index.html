@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -111,7 +111,7 @@
 <meta property="og:site_name" content="LanQinHui">
 <meta property="og:description" content="1.EditText输入限制规则我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-17T14:34:54.444Z">
+<meta property="og:updated_time" content="2018-06-06T02:32:24.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android imageButton 点击按钮前中后，按钮颜色的变化">
 <meta name="twitter:description" content="1.EditText输入限制规则我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是s">
@@ -122,7 +122,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     sidebar: {"position":"left","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -132,11 +132,11 @@
       author: '博主'
     },
     algolia: {
-      applicationID: '3JNDONGMV1',
-      apiKey: '5db86ca1faf1afc1f4aefb590851d88a',
+      applicationID: 'MQPTTKBNT2',
+      apiKey: 'abcc47448c633b1215ef3b0ae9647008',
       indexName: 'LanQinHui_Blog',
       hits: {"per_page":10},
-      labels: {"input_placeholder":"搜索...","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      labels: {"input_placeholder":"搜索...","hits_empty":"没有找到: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
@@ -253,7 +253,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -367,7 +367,7 @@
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-Android" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -658,10 +658,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
@@ -697,6 +697,17 @@
                   
                     
                       简书
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="StackOverflow">
+                  
+                    <i class="fa fa-fw fa-stack-overflow"></i>
+                  
+                    
+                      StackOverflow
                     
                 </a>
               </span>
@@ -754,7 +765,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-EditText输入限制规则"><span class="nav-number">1.</span> <span class="nav-text"><a href="#1-EditText&#x8F93;&#x5165;&#x9650;&#x5236;&#x89C4;&#x5219;" class="headerlink" title="1.EditText&#x8F93;&#x5165;&#x9650;&#x5236;&#x89C4;&#x5219;"></a>1.EditText&#x8F93;&#x5165;&#x9650;&#x5236;&#x89C4;&#x5219;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res-drawable目录中建立这样一个XML文件："><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x6211;&#x4EEC;&#x5728;&#x5F00;&#x53D1;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5F80;&#x5F80;&#x4E3A;&#x4E86;&#x7F8E;&#x5316;&#x754C;&#x9762;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x4F1A;&#x4FEE;&#x6539;&#x6309;&#x94AE;&#x7684;&#x9ED8;&#x8BA4;&#x5916;&#x89C2;&#xFF0C;&#x800C;&#x56E0;&#x4E3A;Android&#x4E2D;&#x7684;&#x6309;&#x94AE;&#x6709;&#x4E09;&#x79CD;&#x72B6;&#x6001;&#x2014;&#x9ED8;&#x8BA4;&#xFF0C;&#x88AB;&#x70B9;&#x51FB;&#xFF0C;&#x88AB;&#x9009;&#x4E2D;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x6539;&#x53D8;&#x6309;&#x94AE;&#x7684;&#x5916;&#x89C2;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x8FD9;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#x90FD;&#x505A;&#x51FA;&#x4FEE;&#x6539;&#xFF0C;&#x4E5F;&#x8BB8;&#x5728;&#x4EE5;&#x5F80;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x5BB9;&#x6613;&#x60F3;&#x5230;&#x7684;&#x5C31;&#x662F;&#xFF0C;&#x624B;&#x52A8;&#x76D1;&#x542C;&#x6309;&#x94AE;&#x7684;&#x9009;&#x4E2D;&#x548C;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5199;&#x4EE3;&#x7801;&#x6765;&#x66FF;&#x6362;&#x6309;&#x94AE;&#x7684;&#x80CC;&#x666F;&#xFF0C;&#x4F46;&#x662F;&#x5728;android&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x8FD9;&#x4E48;&#x9EBB;&#x70E6;&#xFF0C;android&#x65E9;&#x5C31;&#x66FF;&#x6211;&#x4EEC;&#x60F3;&#x597D;&#x4E86;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x90A3;&#x5C31;&#x662F;selector&#x8D44;&#x6E90;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;&#x6309;&#x94AE;&#x7684;&#x4E09;&#x79CD;&#x80CC;&#x666F;&#xFF0C;&#x53EA;&#x9700;&#x5728;res-drawable&#x76EE;&#x5F55;&#x4E2D;&#x5EFA;&#x7ACB;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;XML&#x6587;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x6211;&#x4EEC;&#x5728;&#x5F00;&#x53D1;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5F80;&#x5F80;&#x4E3A;&#x4E86;&#x7F8E;&#x5316;&#x754C;&#x9762;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x4F1A;&#x4FEE;&#x6539;&#x6309;&#x94AE;&#x7684;&#x9ED8;&#x8BA4;&#x5916;&#x89C2;&#xFF0C;&#x800C;&#x56E0;&#x4E3A;Android&#x4E2D;&#x7684;&#x6309;&#x94AE;&#x6709;&#x4E09;&#x79CD;&#x72B6;&#x6001;&#x2014;&#x9ED8;&#x8BA4;&#xFF0C;&#x88AB;&#x70B9;&#x51FB;&#xFF0C;&#x88AB;&#x9009;&#x4E2D;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x6539;&#x53D8;&#x6309;&#x94AE;&#x7684;&#x5916;&#x89C2;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x8FD9;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#x90FD;&#x505A;&#x51FA;&#x4FEE;&#x6539;&#xFF0C;&#x4E5F;&#x8BB8;&#x5728;&#x4EE5;&#x5F80;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x5BB9;&#x6613;&#x60F3;&#x5230;&#x7684;&#x5C31;&#x662F;&#xFF0C;&#x624B;&#x52A8;&#x76D1;&#x542C;&#x6309;&#x94AE;&#x7684;&#x9009;&#x4E2D;&#x548C;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5199;&#x4EE3;&#x7801;&#x6765;&#x66FF;&#x6362;&#x6309;&#x94AE;&#x7684;&#x80CC;&#x666F;&#xFF0C;&#x4F46;&#x662F;&#x5728;android&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x8FD9;&#x4E48;&#x9EBB;&#x70E6;&#xFF0C;android&#x65E9;&#x5C31;&#x66FF;&#x6211;&#x4EEC;&#x60F3;&#x597D;&#x4E86;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x90A3;&#x5C31;&#x662F;selector&#x8D44;&#x6E90;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;&#x6309;&#x94AE;&#x7684;&#x4E09;&#x79CD;&#x80CC;&#x666F;&#xFF0C;&#x53EA;&#x9700;&#x5728;res/drawable&#x76EE;&#x5F55;&#x4E2D;&#x5EFA;&#x7ACB;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;XML&#x6587;&#x4EF6;&#xFF1A;"></a>&#x6211;&#x4EEC;&#x5728;&#x5F00;&#x53D1;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5F80;&#x5F80;&#x4E3A;&#x4E86;&#x7F8E;&#x5316;&#x754C;&#x9762;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x4F1A;&#x4FEE;&#x6539;&#x6309;&#x94AE;&#x7684;&#x9ED8;&#x8BA4;&#x5916;&#x89C2;&#xFF0C;&#x800C;&#x56E0;&#x4E3A;Android&#x4E2D;&#x7684;&#x6309;&#x94AE;&#x6709;&#x4E09;&#x79CD;&#x72B6;&#x6001;&#x2014;&#x9ED8;&#x8BA4;&#xFF0C;&#x88AB;&#x70B9;&#x51FB;&#xFF0C;&#x88AB;&#x9009;&#x4E2D;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x6539;&#x53D8;&#x6309;&#x94AE;&#x7684;&#x5916;&#x89C2;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x8FD9;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#x90FD;&#x505A;&#x51FA;&#x4FEE;&#x6539;&#xFF0C;&#x4E5F;&#x8BB8;&#x5728;&#x4EE5;&#x5F80;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x5BB9;&#x6613;&#x60F3;&#x5230;&#x7684;&#x5C31;&#x662F;&#xFF0C;&#x624B;&#x52A8;&#x76D1;&#x542C;&#x6309;&#x94AE;&#x7684;&#x9009;&#x4E2D;&#x548C;&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5199;&#x4EE3;&#x7801;&#x6765;&#x66FF;&#x6362;&#x6309;&#x94AE;&#x7684;&#x80CC;&#x666F;&#xFF0C;&#x4F46;&#x662F;&#x5728;android&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x8FD9;&#x4E48;&#x9EBB;&#x70E6;&#xFF0C;android&#x65E9;&#x5C31;&#x66FF;&#x6211;&#x4EEC;&#x60F3;&#x597D;&#x4E86;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x90A3;&#x5C31;&#x662F;selector&#x8D44;&#x6E90;&#x3002;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;&#x6309;&#x94AE;&#x7684;&#x4E09;&#x79CD;&#x80CC;&#x666F;&#xFF0C;&#x53EA;&#x9700;&#x5728;res/drawable&#x76EE;&#x5F55;&#x4E2D;&#x5EFA;&#x7ACB;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;XML&#x6587;&#x4EF6;&#xFF1A;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正如上面的资源文件所描述的，我们在这里定义了三种行为各自的图片资源，接下来，我们只需要在相应的按钮中-将背景资源指定为drawable-selector，就完成我们需要做的一切了～"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x6B63;&#x5982;&#x4E0A;&#x9762;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x6240;&#x63CF;&#x8FF0;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x4E86;&#x4E09;&#x79CD;&#x884C;&#x4E3A;&#x5404;&#x81EA;&#x7684;&#x56FE;&#x7247;&#x8D44;&#x6E90;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5728;&#x76F8;&#x5E94;&#x7684;&#x6309;&#x94AE;&#x4E2D;-&#x5C06;&#x80CC;&#x666F;&#x8D44;&#x6E90;&#x6307;&#x5B9A;&#x4E3A;drawable-selector&#xFF0C;&#x5C31;&#x5B8C;&#x6210;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x7684;&#x4E00;&#x5207;&#x4E86;&#xFF5E;" class="headerlink" title="&#x6B63;&#x5982;&#x4E0A;&#x9762;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x6240;&#x63CF;&#x8FF0;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x4E86;&#x4E09;&#x79CD;&#x884C;&#x4E3A;&#x5404;&#x81EA;&#x7684;&#x56FE;&#x7247;&#x8D44;&#x6E90;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5728;&#x76F8;&#x5E94;&#x7684;&#x6309;&#x94AE;&#x4E2D;,&#x5C06;&#x80CC;&#x666F;&#x8D44;&#x6E90;&#x6307;&#x5B9A;&#x4E3A;drawable/selector&#xFF0C;&#x5C31;&#x5B8C;&#x6210;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x7684;&#x4E00;&#x5207;&#x4E86;&#xFF5E;"></a>&#x6B63;&#x5982;&#x4E0A;&#x9762;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x6240;&#x63CF;&#x8FF0;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x91CC;&#x5B9A;&#x4E49;&#x4E86;&#x4E09;&#x79CD;&#x884C;&#x4E3A;&#x5404;&#x81EA;&#x7684;&#x56FE;&#x7247;&#x8D44;&#x6E90;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5728;&#x76F8;&#x5E94;&#x7684;&#x6309;&#x94AE;&#x4E2D;,&#x5C06;&#x80CC;&#x666F;&#x8D44;&#x6E90;&#x6307;&#x5B9A;&#x4E3A;drawable/selector&#xFF0C;&#x5C31;&#x5B8C;&#x6210;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x505A;&#x7684;&#x4E00;&#x5207;&#x4E86;&#xFF5E;</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-EditText输入限制规则"><span class="nav-number">1.</span> <span class="nav-text">1.EditText输入限制规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res-drawable目录中建立这样一个XML文件："><span class="nav-number">1.1.</span> <span class="nav-text">我们在开发的过程中，往往为了美化界面的需要，会修改按钮的默认外观，而因为Android中的按钮有三种状态—默认，被点击，被选中。所以，如果要改变按钮的外观，需要对这三种情况都做出修改，也许在以往，我们最容易想到的就是，手动监听按钮的选中和点击事件，然后写代码来替换按钮的背景，但是在android中，我们不需要这么麻烦，android早就替我们想好了解决方案，那就是selector资源。如果我们要实现按钮的三种背景，只需在res/drawable目录中建立这样一个XML文件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正如上面的资源文件所描述的，我们在这里定义了三种行为各自的图片资源，接下来，我们只需要在相应的按钮中-将背景资源指定为drawable-selector，就完成我们需要做的一切了～"><span class="nav-number">1.2.</span> <span class="nav-text">正如上面的资源文件所描述的，我们在这里定义了三种行为各自的图片资源，接下来，我们只需要在相应的按钮中,将背景资源指定为drawable/selector，就完成我们需要做的一切了～</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -801,7 +812,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Gemini
   </a>
 </div>
 -->
@@ -906,6 +917,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
